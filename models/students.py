@@ -24,4 +24,4 @@ class Student(BaseModel):
     city = ""
     state = ""
     country = ""
-    
+    # class/grade
