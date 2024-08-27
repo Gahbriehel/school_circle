@@ -55,6 +55,12 @@ class FileStorage:
         """
 
         from models.base_model import BaseModel
+        from models.admin import Admin
+        from models.classes import Class
+        from models.parents import Parents
+        from models.schedule import Schedule
+        from models.subject import Subject
+        from models.teachers import Teacher
 
         classes = {"BaseModel": BaseModel}
 
