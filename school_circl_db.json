@@ -1,1 +1,74 @@
-{"BaseModel.76d90040-5dc9-488d-bfe1-d2c41180dfd9": {"id": "76d90040-5dc9-488d-bfe1-d2c41180dfd9", "created_at": "2024-08-27T23:02:20.388371", "updated_at": "2024-08-27T23:02:20.388546", "__class__": "BaseModel"}, "BaseModel.62758057-ec90-424c-b58c-8b2a17793a8c": {"id": "62758057-ec90-424c-b58c-8b2a17793a8c", "created_at": "2024-08-27T23:02:20.388404", "updated_at": "2024-08-27T23:02:20.388788", "__class__": "BaseModel"}, "BaseModel.02f3708b-c1a5-4315-9d8f-ef5336e39dd1": {"id": "02f3708b-c1a5-4315-9d8f-ef5336e39dd1", "created_at": "2024-08-27T23:02:20.388425", "updated_at": "2024-08-27T23:02:20.389028", "__class__": "BaseModel"}, "BaseModel.f56fa842-26ab-4dfd-aabf-4175aa0a02c3": {"id": "f56fa842-26ab-4dfd-aabf-4175aa0a02c3", "created_at": "2024-08-27T23:03:47.760522", "updated_at": "2024-08-27T23:03:47.760687", "__class__": "BaseModel"}, "BaseModel.94073396-e0e4-4477-aa67-31a7d4bf3b84": {"id": "94073396-e0e4-4477-aa67-31a7d4bf3b84", "created_at": "2024-08-27T23:03:47.760541", "updated_at": "2024-08-27T23:03:47.760975", "__class__": "BaseModel"}, "BaseModel.e372d5c6-2f8c-48b6-a701-64e9af5e97ac": {"id": "e372d5c6-2f8c-48b6-a701-64e9af5e97ac", "created_at": "2024-08-27T23:03:47.760553", "updated_at": "2024-08-27T23:03:47.761287", "__class__": "BaseModel"}}
+{
+    "BaseModel.76d90040-5dc9-488d-bfe1-d2c41180dfd9": {
+        "id": "76d90040-5dc9-488d-bfe1-d2c41180dfd9",
+        "created_at": "2024-08-27T23:02:20.388371",
+        "updated_at": "2024-08-27T23:02:20.388546",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.62758057-ec90-424c-b58c-8b2a17793a8c": {
+        "id": "62758057-ec90-424c-b58c-8b2a17793a8c",
+        "created_at": "2024-08-27T23:02:20.388404",
+        "updated_at": "2024-08-27T23:02:20.388788",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.02f3708b-c1a5-4315-9d8f-ef5336e39dd1": {
+        "id": "02f3708b-c1a5-4315-9d8f-ef5336e39dd1",
+        "created_at": "2024-08-27T23:02:20.388425",
+        "updated_at": "2024-08-27T23:02:20.389028",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.f56fa842-26ab-4dfd-aabf-4175aa0a02c3": {
+        "id": "f56fa842-26ab-4dfd-aabf-4175aa0a02c3",
+        "created_at": "2024-08-27T23:03:47.760522",
+        "updated_at": "2024-08-27T23:03:47.760687",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.94073396-e0e4-4477-aa67-31a7d4bf3b84": {
+        "id": "94073396-e0e4-4477-aa67-31a7d4bf3b84",
+        "created_at": "2024-08-27T23:03:47.760541",
+        "updated_at": "2024-08-27T23:03:47.760975",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.e372d5c6-2f8c-48b6-a701-64e9af5e97ac": {
+        "id": "e372d5c6-2f8c-48b6-a701-64e9af5e97ac",
+        "created_at": "2024-08-27T23:03:47.760553",
+        "updated_at": "2024-08-27T23:03:47.761287",
+        "__class__": "BaseModel"
+    },
+    "Admin.0b3db9b7-c569-42f2-b31c-2d31e189a625": {
+        "id": "0b3db9b7-c569-42f2-b31c-2d31e189a625",
+        "created_at": "2024-08-28T01:22:24.543194",
+        "updated_at": "2024-08-28T01:22:24.543320",
+        "__class__": "Admin"
+    },
+    "BaseModel.78e1d510-d566-4cc0-a443-da975ad57779": {
+        "id": "78e1d510-d566-4cc0-a443-da975ad57779",
+        "created_at": "2024-08-28T01:22:24.544080",
+        "updated_at": "2024-08-28T01:22:24.544149",
+        "__class__": "BaseModel"
+    },
+    "Parents.1a6cb504-ff5f-4e32-a5ce-0d4b6e95206f": {
+        "id": "1a6cb504-ff5f-4e32-a5ce-0d4b6e95206f",
+        "created_at": "2024-08-28T01:22:24.544782",
+        "updated_at": "2024-08-28T01:22:24.544848",
+        "__class__": "Parents"
+    },
+    "Student.1d0f596b-739c-40ae-98ec-503794ecf6b9": {
+        "id": "1d0f596b-739c-40ae-98ec-503794ecf6b9",
+        "created_at": "2024-08-28T01:22:24.545481",
+        "updated_at": "2024-08-28T01:22:24.545546",
+        "__class__": "Student"
+    },
+    "Subject.685d151d-d204-4978-8378-0728a915e565": {
+        "id": "685d151d-d204-4978-8378-0728a915e565",
+        "created_at": "2024-08-28T01:22:24.546177",
+        "updated_at": "2024-08-28T01:22:24.546245",
+        "__class__": "Subject"
+    },
+    "Class.980518bc-0442-4b67-a15b-40f669397e2f": {
+        "id": "980518bc-0442-4b67-a15b-40f669397e2f",
+        "created_at": "2024-08-28T01:22:24.547223",
+        "updated_at": "2024-08-28T01:22:24.547293",
+        "__class__": "Class"
+    }
+}
