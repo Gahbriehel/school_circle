@@ -1,91 +1,284 @@
 [
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Admin",
+        "importPath": "models.admin",
+        "description": "models.admin",
+        "isExtraImport": true,
+        "detail": "models.admin",
+        "documentation": {}
+    },
+    {
+        "label": "Admin",
+        "importPath": "models.admin",
+        "description": "models.admin",
+        "isExtraImport": true,
+        "detail": "models.admin",
+        "documentation": {}
+    },
+    {
+        "label": "Class",
+        "importPath": "models.classes",
+        "description": "models.classes",
+        "isExtraImport": true,
+        "detail": "models.classes",
+        "documentation": {}
+    },
+    {
+        "label": "Class",
+        "importPath": "models.classes",
+        "description": "models.classes",
+        "isExtraImport": true,
+        "detail": "models.classes",
+        "documentation": {}
+    },
+    {
+        "label": "Parents",
+        "importPath": "models.parents",
+        "description": "models.parents",
+        "isExtraImport": true,
+        "detail": "models.parents",
+        "documentation": {}
+    },
+    {
+        "label": "Parents",
+        "importPath": "models.parents",
+        "description": "models.parents",
+        "isExtraImport": true,
+        "detail": "models.parents",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "importPath": "models.students",
+        "description": "models.students",
+        "isExtraImport": true,
+        "detail": "models.students",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "importPath": "models.students",
+        "description": "models.students",
+        "isExtraImport": true,
+        "detail": "models.students",
+        "documentation": {}
+    },
+    {
+        "label": "Schedule",
+        "importPath": "models.schedule",
+        "description": "models.schedule",
+        "isExtraImport": true,
+        "detail": "models.schedule",
+        "documentation": {}
+    },
+    {
+        "label": "Subject",
+        "importPath": "models.subject",
+        "description": "models.subject",
+        "isExtraImport": true,
+        "detail": "models.subject",
+        "documentation": {}
+    },
+    {
+        "label": "Subject",
+        "importPath": "models.subject",
+        "description": "models.subject",
+        "isExtraImport": true,
+        "detail": "models.subject",
+        "documentation": {}
+    },
+    {
+        "label": "Teacher",
+        "importPath": "models.teachers",
+        "description": "models.teachers",
+        "isExtraImport": true,
+        "detail": "models.teachers",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "json",
         "description": "json",
         "detail": "json",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
         "documentation": {}
     },
     {
@@ -106,43 +299,11 @@
         "documentation": {}
     },
     {
-        "label": "Admin",
-        "importPath": "models.admin",
-        "description": "models.admin",
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
         "isExtraImport": true,
-        "detail": "models.admin",
-        "documentation": {}
-    },
-    {
-        "label": "Parents",
-        "importPath": "models.parents",
-        "description": "models.parents",
-        "isExtraImport": true,
-        "detail": "models.parents",
-        "documentation": {}
-    },
-    {
-        "label": "Student",
-        "importPath": "models.students",
-        "description": "models.students",
-        "isExtraImport": true,
-        "detail": "models.students",
-        "documentation": {}
-    },
-    {
-        "label": "Subject",
-        "importPath": "models.subject",
-        "description": "models.subject",
-        "isExtraImport": true,
-        "detail": "models.subject",
-        "documentation": {}
-    },
-    {
-        "label": "Class",
-        "importPath": "models.classes",
-        "description": "models.classes",
-        "isExtraImport": true,
-        "detail": "models.classes",
+        "detail": "sqlalchemy.ext.declarative",
         "documentation": {}
     },
     {
@@ -159,6 +320,15 @@
         "description": "models",
         "isExtraImport": true,
         "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "DBStorage",
+        "kind": 6,
+        "importPath": "models.engine.db_storage",
+        "description": "models.engine.db_storage",
+        "peekOfCode": "class DBStorage:\n    \"\"\"\n    New database engine for our School Circle Project\n    to connect to MySQL\n    \"\"\"\n    __engine = None\n    __session = None\n    def __init__(self):\n        \"\"\"\n        Initialize the database",
+        "detail": "models.engine.db_storage",
         "documentation": {}
     },
     {
@@ -175,7 +345,7 @@
         "kind": 6,
         "importPath": "models.admin",
         "description": "models.admin",
-        "peekOfCode": "class Admin(BaseModel):\n    \"\"\"\n    Creates the Admin Model for school circle\n    \"\"\"\n    first_name = \"\"\n    last_name = \"\"\n    username = \"\"\n    password = \"\"\n    email = \"\"",
+        "peekOfCode": "class Admin(BaseModel, Base):\n    \"\"\"\n    Creates the Admin Model for school circle\n    \"\"\"\n    first_name = \"\"\n    last_name = \"\"\n    username = \"\"\n    password = \"\"\n    email = \"\"",
         "detail": "models.admin",
         "documentation": {}
     },
@@ -184,7 +354,16 @@
         "kind": 6,
         "importPath": "models.base_model",
         "description": "models.base_model",
-        "peekOfCode": "class BaseModel:\n    \"\"\"\n    Base Model that will be derived by all ther classes\n    \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\"\n        Instantiates a new model\n        \"\"\"\n        if not kwargs or (\"updated_at\" not in kwargs and \"created_at\" not in kwargs and \"__class__\" not in kwargs):\n            from models import storage",
+        "peekOfCode": "class BaseModel:\n    \"\"\"\n    Base Model that will be derived by all ther classes\n    \"\"\"\n    id = Column(String(60), primary_ley=True)\n    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())\n    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())\n    def __init__(self, *args, **kwargs):\n        \"\"\"\n        Instantiates a new model",
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "peekOfCode": "Base = declarative_base()\nclass BaseModel:\n    \"\"\"\n    Base Model that will be derived by all ther classes\n    \"\"\"\n    id = Column(String(60), primary_ley=True)\n    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())\n    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())\n    def __init__(self, *args, **kwargs):\n        \"\"\"",
         "detail": "models.base_model",
         "documentation": {}
     },

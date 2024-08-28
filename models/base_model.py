@@ -7,12 +7,20 @@ for all models in our school_circle app
 
 import uuid
 from datetime import datetime
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, DateTime, String
 
+
+Base = declarative_base()
 
 class BaseModel:
     """
     Base Model that will be derived by all ther classes
     """
+
+    id = Column(String(60), primary_ley=True)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
 
     def __init__(self, *args, **kwargs):
         """
@@ -46,6 +54,9 @@ class BaseModel:
         cls = (str(type(self)).split(".")[-1]).split("'")[0]
         dictionary = self.__dict__
 
+        if "_sa_instance_state" in self.__dict__:
+            del dictionary["_sa_instance_state"]
+
         return "[{}] ({}) {}".format(cls, self.id, dictionary)
 
     def save(self):
@@ -58,9 +69,6 @@ class BaseModel:
         storage.save()
 
 
-        # TODO save to file storage later
-        pass
-
     def to_dict(self):
         """
         Convert instance into dict format
@@ -70,6 +78,9 @@ class BaseModel:
         dictionary.update({"__class__": (str(type(self)).split(".")[-1]).split("'")[0]})
         dictionary["created_at"] = self.created_at.isoformat()
         dictionary["updated_at"] = self.updated_at.isoformat()
+
+        if "_sa_instance_state" in self.__dict__:
+            del dictionary["_sa_instance_state"]
 
         return dictionary
 
