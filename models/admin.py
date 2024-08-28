@@ -16,6 +16,6 @@ class Admin(BaseModel, Base):
     first_name = Column(String(128), nullable=False)
     last_name = Column(String(128), nullable=False)
     username = Column(String(128), nullable=False)
-    password = Column(string)
-    email = ""
+    password = Column(String(128), nullable=False)
+    email = Column(String(128), nullable=False)
 
