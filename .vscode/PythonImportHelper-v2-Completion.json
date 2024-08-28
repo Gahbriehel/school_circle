@@ -81,6 +81,14 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
         "label": "uuid",
         "kind": 6,
         "isExtraImport": true,
@@ -95,6 +103,54 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Admin",
+        "importPath": "models.admin",
+        "description": "models.admin",
+        "isExtraImport": true,
+        "detail": "models.admin",
+        "documentation": {}
+    },
+    {
+        "label": "Parents",
+        "importPath": "models.parents",
+        "description": "models.parents",
+        "isExtraImport": true,
+        "detail": "models.parents",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "importPath": "models.students",
+        "description": "models.students",
+        "isExtraImport": true,
+        "detail": "models.students",
+        "documentation": {}
+    },
+    {
+        "label": "Subject",
+        "importPath": "models.subject",
+        "description": "models.subject",
+        "isExtraImport": true,
+        "detail": "models.subject",
+        "documentation": {}
+    },
+    {
+        "label": "Class",
+        "importPath": "models.classes",
+        "description": "models.classes",
+        "isExtraImport": true,
+        "detail": "models.classes",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
         "documentation": {}
     },
     {
@@ -184,6 +240,60 @@
         "description": "models.teachers",
         "peekOfCode": "class Teacher(BaseModel):\n    \"\"\"\n    Creates the Teacher Model for school circle\n    \"\"\"\n    first_name = \"\"\n    last_name = \"\"\n    username = \"\"\n    gender = \"\"\n    email = \"\"\n    dob = \"\"",
         "detail": "models.teachers",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "kind": 5,
+        "importPath": "test_all_classes",
+        "description": "test_all_classes",
+        "peekOfCode": "admin = Admin()\nprint(\"Admin\", admin)\nadmin.save()\nbasemodel = BaseModel()\nprint(\"basemode\", basemodel)\nbasemodel.save()\nparents = Parents()\nprint(\"parents\", parents)\nparents.save()\nstudents = Student()",
+        "detail": "test_all_classes",
+        "documentation": {}
+    },
+    {
+        "label": "basemodel",
+        "kind": 5,
+        "importPath": "test_all_classes",
+        "description": "test_all_classes",
+        "peekOfCode": "basemodel = BaseModel()\nprint(\"basemode\", basemodel)\nbasemodel.save()\nparents = Parents()\nprint(\"parents\", parents)\nparents.save()\nstudents = Student()\nprint(\"students:\", students)\nstudents.save()\nsubject = Subject()",
+        "detail": "test_all_classes",
+        "documentation": {}
+    },
+    {
+        "label": "parents",
+        "kind": 5,
+        "importPath": "test_all_classes",
+        "description": "test_all_classes",
+        "peekOfCode": "parents = Parents()\nprint(\"parents\", parents)\nparents.save()\nstudents = Student()\nprint(\"students:\", students)\nstudents.save()\nsubject = Subject()\nprint(\"subject\", subject)\nsubject.save()\nclasses = Class()",
+        "detail": "test_all_classes",
+        "documentation": {}
+    },
+    {
+        "label": "students",
+        "kind": 5,
+        "importPath": "test_all_classes",
+        "description": "test_all_classes",
+        "peekOfCode": "students = Student()\nprint(\"students:\", students)\nstudents.save()\nsubject = Subject()\nprint(\"subject\", subject)\nsubject.save()\nclasses = Class()\nprint(\"classes\", classes)\nclasses.save()\nprint(\"\\n\\n\\n\\n\\n\\n\")",
+        "detail": "test_all_classes",
+        "documentation": {}
+    },
+    {
+        "label": "subject",
+        "kind": 5,
+        "importPath": "test_all_classes",
+        "description": "test_all_classes",
+        "peekOfCode": "subject = Subject()\nprint(\"subject\", subject)\nsubject.save()\nclasses = Class()\nprint(\"classes\", classes)\nclasses.save()\nprint(\"\\n\\n\\n\\n\\n\\n\")\nprint(storage.all())",
+        "detail": "test_all_classes",
+        "documentation": {}
+    },
+    {
+        "label": "classes",
+        "kind": 5,
+        "importPath": "test_all_classes",
+        "description": "test_all_classes",
+        "peekOfCode": "classes = Class()\nprint(\"classes\", classes)\nclasses.save()\nprint(\"\\n\\n\\n\\n\\n\\n\")\nprint(storage.all())",
+        "detail": "test_all_classes",
         "documentation": {}
     },
     {
