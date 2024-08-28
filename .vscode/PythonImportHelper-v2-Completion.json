@@ -1,0 +1,225 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "FileStorage",
+        "kind": 6,
+        "importPath": "models.engine.file_storage",
+        "description": "models.engine.file_storage",
+        "peekOfCode": "class FileStorage:\n    \"\"\"\n    Manages storage of School circle\n    \"\"\"\n    __file = \"school_circl_db.json\"\n    __objects = {}\n    def all(self, cls=None):\n        \"\"\"\n        Returns a dict of models currently in storage\n        \"\"\"",
+        "detail": "models.engine.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "Admin",
+        "kind": 6,
+        "importPath": "models.admin",
+        "description": "models.admin",
+        "peekOfCode": "class Admin(BaseModel):\n    \"\"\"\n    Creates the Admin Model for school circle\n    \"\"\"\n    first_name = \"\"\n    last_name = \"\"\n    username = \"\"\n    password = \"\"\n    email = \"\"",
+        "detail": "models.admin",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "kind": 6,
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "peekOfCode": "class BaseModel:\n    \"\"\"\n    Base Model that will be derived by all ther classes\n    \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\"\n        Instantiates a new model\n        \"\"\"\n        if not kwargs or (\"updated_at\" not in kwargs and \"created_at\" not in kwargs and \"__class__\" not in kwargs):\n            from models import storage",
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Class",
+        "kind": 6,
+        "importPath": "models.classes",
+        "description": "models.classes",
+        "peekOfCode": "class Class(BaseModel):\n    \"\"\"\n    Creates the Class Model for school circle\n    \"\"\"\n    class_name = \"\"",
+        "detail": "models.classes",
+        "documentation": {}
+    },
+    {
+        "label": "Parents",
+        "kind": 6,
+        "importPath": "models.parents",
+        "description": "models.parents",
+        "peekOfCode": "class Parents(BaseModel):\n    \"\"\"\n    Creates the Parent Model for school circle\n    \"\"\"\n    first_name = \"\"\n    last_name = \"\"\n    phone_number = \"\"\n    relationship = \"\"",
+        "detail": "models.parents",
+        "documentation": {}
+    },
+    {
+        "label": "Schedule",
+        "kind": 6,
+        "importPath": "models.schedule",
+        "description": "models.schedule",
+        "peekOfCode": "class Schedule(BaseModel):\n    \"\"\"\n    Creates the Schedule Model for school circle\n    \"\"\"\n    day_of_the_week = 0\n    start_time = \"\"\n    end_time = \"\"",
+        "detail": "models.schedule",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "models.students",
+        "description": "models.students",
+        "peekOfCode": "class Student(BaseModel):\n    \"\"\"\n    Creates the Student Model for school circle\n    \"\"\"\n    first_name = \"\"\n    last_name = \"\"\n    username = \"\"\n    gender = \"\"\n    email = \"\"\n    dob = \"\"",
+        "detail": "models.students",
+        "documentation": {}
+    },
+    {
+        "label": "Subject",
+        "kind": 6,
+        "importPath": "models.subject",
+        "description": "models.subject",
+        "peekOfCode": "class Subject(BaseModel):\n    \"\"\"\n    Creates the Subject Model for school circle\n    \"\"\"\n    subject_name = \"\"",
+        "detail": "models.subject",
+        "documentation": {}
+    },
+    {
+        "label": "Teacher",
+        "kind": 6,
+        "importPath": "models.teachers",
+        "description": "models.teachers",
+        "peekOfCode": "class Teacher(BaseModel):\n    \"\"\"\n    Creates the Teacher Model for school circle\n    \"\"\"\n    first_name = \"\"\n    last_name = \"\"\n    username = \"\"\n    gender = \"\"\n    email = \"\"\n    dob = \"\"",
+        "detail": "models.teachers",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "test_base_models",
+        "description": "test_base_models",
+        "peekOfCode": "base = BaseModel()\nprint(base)\nbase.save()\nprint(base)\nprint(base.to_dict())",
+        "detail": "test_base_models",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "test_file_storage",
+        "description": "test_file_storage",
+        "peekOfCode": "base = BaseModel()\nbase1 = BaseModel()\nbase2 = BaseModel()\nprint(\"----------Base Model ----------\")\nprint(base)\nprint(base1)\nprint(base2)\nprint(\"------- end ------------\")\nprint(\"------- Start Save ------------\")\nbase.save()",
+        "detail": "test_file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "base1",
+        "kind": 5,
+        "importPath": "test_file_storage",
+        "description": "test_file_storage",
+        "peekOfCode": "base1 = BaseModel()\nbase2 = BaseModel()\nprint(\"----------Base Model ----------\")\nprint(base)\nprint(base1)\nprint(base2)\nprint(\"------- end ------------\")\nprint(\"------- Start Save ------------\")\nbase.save()\nbase1.save()",
+        "detail": "test_file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "base2",
+        "kind": 5,
+        "importPath": "test_file_storage",
+        "description": "test_file_storage",
+        "peekOfCode": "base2 = BaseModel()\nprint(\"----------Base Model ----------\")\nprint(base)\nprint(base1)\nprint(base2)\nprint(\"------- end ------------\")\nprint(\"------- Start Save ------------\")\nbase.save()\nbase1.save()\nbase2.save()",
+        "detail": "test_file_storage",
+        "documentation": {}
+    }
+]
