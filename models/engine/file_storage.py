@@ -7,6 +7,7 @@ Defines a class to manage file storage for School Circle
 import json
 
 
+
 class FileStorage:
     """
     Manages storage of School circle
@@ -54,10 +55,18 @@ class FileStorage:
         Loads storage dictionary from file
         """
 
+        from models.admin import Admin
+        from models.base_model import BaseModel
+        from models.parents import Parents
+        from models.students import Student
+        from models.subject import Subject
+        from models.classes import Class
+
+
         classes = {
             "BaseModel": BaseModel,
             "Admin": Admin,
-            "Class": Class,
+            "Classes": Class,
             "Parents": Parents,
             "Student": Student,
             "Subject": Subject
