@@ -1,0 +1,109 @@
+:root {
+  --color-main: #016064;
+  --color-primary-variant: #153436;
+  --color-secondary: #ff7b02;
+  --color-secondary-variant: #e5a55d;
+  --color-tertiary-variant: #7b4e19;
+  --color-bg-1: #000e17;
+  --color-bg-2: #001e2d;
+  --color-bg-3: #012734;
+  --color-bg-4: #003347;
+  --color-light: #85a2b2;
+  --color-white: hsl(0, 0%, 90%);
+  --color-bg-5: #32393b;
+
+  --container-width-lg: 88%;
+  --container-width-md: 92%;
+
+  --transition: all 400ms ease;
+}
+
+.student,
+.teacher,
+.continue {
+  text-align: center;
+}
+
+#student-btn {
+  width: 1000px;
+  height: 5rem;
+  border-radius: 15px;
+  background: var(--color-primary-variant);
+  color: var(--color-white);
+  font-size: 24px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#student-btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary-variant);
+}
+
+#teacher-btn {
+  width: 1000px;
+  height: 5rem;
+  border-radius: 15px;
+  background: var(--color-white);
+  color: var(--color-primary-variant);
+  font-size: 24px;
+  text-align: center;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+#teacher-btn:hover {
+  background: var(--color-primary-variant);
+  color: var(--color-white);
+  transition: var(--transition);
+}
+
+#continue-btn {
+  width: 150px;
+  height: 3rem;
+  border-radius: 15px;
+  background: var(--color-primary-variant);
+  color: var(--color-white);
+  font-size: 24px;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 12rem;
+}
+
+#continue-btn:hover {
+  background-color: var(--color-secondary-variant);
+  color: var(--color-primary-variant);
+}
+
+/* Button sp */
+
+.select-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid var(--color-main);
+  background-color: white;
+  color: var(--color-main);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.select-btn.selected {
+  background-color: var(--color-main);
+  color: white;
+}
+
+#continue-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--color-main);
+  background-color: white;
+  color: var(--color-main);
+  cursor: not-allowed;
+  margin-top: 20px;
+}
+
+#continue-btn.enabled {
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  color: white;
+}
