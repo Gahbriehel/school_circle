@@ -6,8 +6,8 @@ New engine for the database
 
 import os
 import models
-from models.base_model import Base, BaseModel
 from models.admin import Admin
+from models.base_model import Base
 from models.classes import Class
 from models.parents import Parents
 from models.students import Student
@@ -81,7 +81,7 @@ class DBStorage:
 
                 for obj in result:
                     key = obj.to_dict()['__class__'] + '.' + obj.id
-                    dictionary[key] = object
+                    dictionary[key] = obj
         else:
             result = self.__session.query(classes[cls]).all()
 
