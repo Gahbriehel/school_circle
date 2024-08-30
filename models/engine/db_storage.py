@@ -5,6 +5,7 @@ New engine for the database
 """
 
 import os
+import models
 from models.base_model import Base, BaseModel
 from models.admin import Admin
 from models.classes import Class
@@ -14,8 +15,18 @@ from models.schedule import Schedule
 from models.subject import Subject
 from models.teachers import Teacher
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 
+
+classes = {
+            "Admin": Admin,
+            "Classes": Class,
+            "Parents": Parents,
+            "Student": Student,
+            "Subject": Subject,
+            "Schedule": Schedule,
+            "teachers": Teacher
+}
 
 class DBStorage:
 
@@ -44,6 +55,9 @@ class DBStorage:
 
         self.__engine = create_engine(uri, pool_pre_ping=True)
 
+        if os.getenv("SCH_CIR_ENV") == "test":
+            Base.metadata.drop_all(self.__engine)
+
 
     def all(self, cls=None):
         """
@@ -55,15 +69,9 @@ class DBStorage:
             "parents",
             "student",
             "subject",
+            "schdules",
+            "teachers"
         ]
-
-        classes = {
-            "Admin": Admin,
-            "Classes": Class,
-            "Parents": Parents,
-            "Student": Student,
-            "Subject": Subject
-        }
 
         dictionary = {}
         if cls is None:
@@ -110,5 +118,44 @@ class DBStorage:
         """
 
         Base.metadata.create_all(self.__engine)
-        Session = sessionmaker(bind=self.__engine, expire_on_commit=False)
-        self.__session = Session()
+        sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        Session = scoped_session(sess_factory)
+        self.__session = Session
+
+    def close(self):
+        """
+        call remove() mthod on the private session attribute
+        """
+        self.___session.remove()
+
+    def get(self, cls, id):
+        """
+        Returns the object bases on the class name and its ID, or
+        None if not found
+        """
+
+        if cls not in classes.values():
+            return None
+        
+        all_cls = models.storage.all(cls)
+        for value in all_cls.values():
+            if (value.id == id):
+                return value
+            
+        return None
+    
+    def count(self, cls=None):
+        """
+        count the number of objects in storage
+        """
+
+        all_class = classes.values()
+
+        if not cls:
+            count = 0
+            for clas in all_class:
+                count += len(models.storage.all(clas).values())
+        else:
+            count = len(models.storage.all(cls).values())
+
+        return count
