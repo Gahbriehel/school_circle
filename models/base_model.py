@@ -10,6 +10,8 @@ from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, DateTime, String
 
+import models
+
 
 Base = declarative_base()
 
@@ -18,9 +20,10 @@ class BaseModel:
     Base Model that will be derived by all ther classes
     """
 
-    id = Column(String(60), primary_ley=True)
-    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+    if models.storage_t == "db":
+        id = Column(String(60), primary_ley=True)
+        created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+        updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
 
     def __init__(self, *args, **kwargs):
         """
