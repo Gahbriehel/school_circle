@@ -9,19 +9,18 @@ import uuid
 from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, DateTime, String
-
-import models
-
+from os import getenv
 
 Base = declarative_base()
+
 
 class BaseModel:
     """
     Base Model that will be derived by all ther classes
     """
 
-    if models.storage_t == "db":
-        id = Column(String(60), primary_ley=True)
+    if getenv("SCH_CIR_TYPE_STORAGE") == "db":
+        id = Column(String(60), primary_key=True)
         created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
         updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
 
@@ -30,8 +29,12 @@ class BaseModel:
         Instantiates a new model
         """
 
-        if not kwargs or ("updated_at" not in kwargs and "created_at" not in kwargs and "__class__" not in kwargs):
-            
+        if not kwargs or (
+            "updated_at" not in kwargs
+            and "created_at" not in kwargs
+            and "__class__" not in kwargs
+        ):
+
             from models import storage
 
             self.id = str(uuid.uuid4())
@@ -67,10 +70,10 @@ class BaseModel:
         Updates and saves to file
         """
         from models import storage
+
         self.updated_at = datetime.now()
         storage.new(self)
         storage.save()
-
 
     def to_dict(self):
         """
