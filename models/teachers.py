@@ -11,16 +11,16 @@ import models
 from models.base_model import BaseModel
 
 
-
-class Gender(enum):
+class Gender(enum.Enum):
     """
     Initializes a set of values for gender
     """
+
     male = "M"
     female = "F"
 
 
-class RelationshipStatus(enum):
+class RelationshipStatus(enum.Enum):
     """
     Specifies relationship status
     """
@@ -33,7 +33,6 @@ class RelationshipStatus(enum):
 
 
 class Teacher(BaseModel):
-    
     """
     Creates the Teacher Model for school circle
     """

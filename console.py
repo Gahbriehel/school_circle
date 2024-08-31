@@ -33,9 +33,9 @@ class SchoolCircle(cmd.Cmd):
         "Class": Class,
         "Parents": Parents,
         "Schedule": Schedule,
-        "Students": Student,
+        "Student": Student,
         "Subject": Subject,
-        "Teachers": Teacher,
+        "Teacher": Teacher,
     }
     dot_cmds = ["all", "count", "show", "destroy", "update"]
     types_to_convert = {"day_of_the_week": int}
@@ -156,6 +156,7 @@ class SchoolCircle(cmd.Cmd):
             return
 
         new_instance = SchoolCircle.classes[args_split[0]]
+        print(new_instance)
 
         new_attr = {}
         for param in args_split[1:]:
@@ -218,6 +219,7 @@ class SchoolCircle(cmd.Cmd):
         # TODO: Modify here to diff query from file
         #       And from DB
         try:
+            print("in here")
             print(storage._FileStorage__objects[key])
         except KeyError:
             print("** no instance found")
@@ -306,7 +308,7 @@ class SchoolCircle(cmd.Cmd):
         Count current number of class instances
         """
         count = 0
-        for k, v in storage.all():
+        for k, v in storage._FileStorage__objects.items():
             if args == k.split(".")[0]:
                 count += 1
 

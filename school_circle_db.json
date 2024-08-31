@@ -1,0 +1,63 @@
+{
+    "Admin.7495b2ba-9658-440d-a6e3-6e03b9db1397": {
+        "id": "7495b2ba-9658-440d-a6e3-6e03b9db1397",
+        "created_at": "2024-08-31T00:37:15.815501",
+        "updated_at": "2024-08-31T00:45:22.688758",
+        "name": "Tunde",
+        "__class__": "Admin"
+    },
+    "BaseModel.67d8e876-3624-4a9e-81dd-79f75ceacacb": {
+        "id": "67d8e876-3624-4a9e-81dd-79f75ceacacb",
+        "created_at": "2024-08-31T00:47:26.876956",
+        "updated_at": "2024-08-31T00:49:26.260302",
+        "name": "Base",
+        "__class__": "BaseModel"
+    },
+    "Class.a1e5a80f-0724-43aa-8ece-1594b440d16d": {
+        "id": "a1e5a80f-0724-43aa-8ece-1594b440d16d",
+        "created_at": "2024-08-31T00:50:26.903452",
+        "updated_at": "2024-08-31T00:51:50.237128",
+        "name": "Class",
+        "__class__": "Class"
+    },
+    "Parents.ef93655a-31cc-4294-8ced-75b8583b5a82": {
+        "id": "ef93655a-31cc-4294-8ced-75b8583b5a82",
+        "created_at": "2024-08-31T00:52:34.087241",
+        "updated_at": "2024-08-31T00:54:09.574207",
+        "name": "Parent",
+        "__class__": "Parents"
+    },
+    "Schedule.89424922-6233-4b3e-90da-eda59d1f9c55": {
+        "id": "89424922-6233-4b3e-90da-eda59d1f9c55",
+        "created_at": "2024-08-31T00:56:48.069797",
+        "updated_at": "2024-08-31T00:58:30.876553",
+        "name": "Schedule",
+        "__class__": "Schedule"
+    },
+    "Student.f63260b9-8a27-4349-accf-cd51881be003": {
+        "id": "f63260b9-8a27-4349-accf-cd51881be003",
+        "created_at": "2024-08-31T00:59:18.523093",
+        "updated_at": "2024-08-31T01:02:25.803020",
+        "name": "Student",
+        "__class__": "Student"
+    },
+    "Subject.29311f57-2ebe-4ccc-979b-302e80da1a86": {
+        "id": "29311f57-2ebe-4ccc-979b-302e80da1a86",
+        "created_at": "2024-08-31T01:04:27.402505",
+        "updated_at": "2024-08-31T01:06:20.520704",
+        "name": "Subject",
+        "__class__": "Subject"
+    },
+    "Teacher.68a53923-caff-46c8-a4f5-447bf666aa09": {
+        "id": "68a53923-caff-46c8-a4f5-447bf666aa09",
+        "created_at": "2024-08-31T01:06:38.400910",
+        "updated_at": "2024-08-31T01:06:38.401289",
+        "__class__": "Teacher"
+    },
+    "Teacher.ae4fb407-fb8a-4f5f-9ec9-c04bff358fcc": {
+        "id": "ae4fb407-fb8a-4f5f-9ec9-c04bff358fcc",
+        "created_at": "2024-08-31T01:06:42.971465",
+        "updated_at": "2024-08-31T01:06:42.972045",
+        "__class__": "Teacher"
+    }
+}
