@@ -13,10 +13,10 @@ from models.subject import Subject
 from models.teachers import Teacher
 from models.admin import Admin
 from os import getenv
-import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from urllib.parse import quote
+
 
 classes = {
     "Admin": Admin,

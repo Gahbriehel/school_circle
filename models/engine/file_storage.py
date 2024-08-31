@@ -13,6 +13,7 @@ from models.students import Student
 from models.subject import Subject
 from models.classes import Class
 from hashlib import md5
+from models.teachers import Teacher
 
 classes = {
     "BaseModel": BaseModel,
@@ -21,6 +22,7 @@ classes = {
     "Parents": Parents,
     "Student": Student,
     "Subject": Subject,
+    "Teacher": Teacher
 }
 
 

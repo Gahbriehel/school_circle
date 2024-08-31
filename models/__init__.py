@@ -20,3 +20,4 @@ else:
     storage = FileStorage()
 
 storage.reload()
+print(storage.all())
