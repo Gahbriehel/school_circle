@@ -18,10 +18,6 @@
   --transition: all 400ms ease;
 }
 
-.about-body {
-  background: var(--color-bg-3);
-}
-
 .about-header h1 {
   color: var(--color-secondary-variant);
   /* border-bottom: 0.2rem solid var(--color-tertiary-variant); */

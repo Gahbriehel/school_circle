@@ -65,3 +65,7 @@
 .form-group button:hover {
   background-color: var(--color-secondary);
 }
+
+.footer {
+  margin-top: 20rem;
+}
