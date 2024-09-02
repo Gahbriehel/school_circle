@@ -364,11 +364,39 @@ nav {
 
 .features {
   color: var(--color-main);
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
+
+.f1,
+.f2,
+.f3,
+.f4,
+.f5 {
+  /* display: flex; */
+  /* justify-content: space-evenly; */
+  margin-left: 12rem;
+  margin-top: 2rem;
+}
+
 .features-header {
   text-align: center;
-  margin: 4rem;
+  margin-top: 2rem;
   color: var(--color-main);
+}
+
+.features p {
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  margin-left: 15rem;
+  max-width: 1000px;
+}
+
+.features h2 {
+  font-weight: bold;
+  text-align: left;
 }
 
 .ready {
