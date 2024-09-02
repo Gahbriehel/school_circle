@@ -17,3 +17,110 @@
 
   --transition: all 400ms ease;
 }
+
+.contact-text h1 {
+  color: var(--color-main);
+  text-align: center;
+  margin-top: 10rem;
+  width: 100%;
+}
+.contact-text p {
+  text-align: center;
+  width: 100%;
+  color: var(--color-secondary-variant);
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  margin: auto;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--color-main);
+}
+
+.form-group input::placeholder,
+.form-group select {
+  color: var(--color-main);
+}
+
+.form-group {
+  color: var(--color-main);
+  font-size: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#lname {
+  margin-left: 0.2rem;
+}
+
+#form-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--color-main);
+}
+
+.form-group button {
+  width: 10rem;
+  padding: 15px;
+  margin-top: 3rem;
+  background-color: #016064;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: var(--color-secondary-variant);
+  color: var(--color-main);
+}
+
+.reach-us h1 {
+  color: var(--color-secondary-variant);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.reach-us {
+  margin: 3rem auto;
+  text-align: left;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.reach-us h2 {
+  color: var(--color-main);
+}
+
+#mail {
+  font-size: 30px;
+}
+
+.footer {
+  margin-top: 20rem;
+}
