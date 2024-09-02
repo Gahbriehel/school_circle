@@ -8,7 +8,7 @@ from api.utils.database import db
 parent_routes = Blueprint("parent_routes", __name__)
 
 
-@parent_routes.route("/", methods=["POST"])
+@parent_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_parent():
     try:
         data = request.get_json()
@@ -21,7 +21,7 @@ def create_parent():
         return response_with(resp.INVALID_INPUT_422)
 
 
-@parent_routes.route("/", methods=["GET"])
+@parent_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_parents():
 
     fetched = Parent.query.all()

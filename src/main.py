@@ -41,7 +41,7 @@ app.register_blueprint(subject_routes, url_prefix="/api/subjects")
 app.register_blueprint(parent_routes, url_prefix="/api/parents")
 app.register_blueprint(schedule_route, url_prefix="/api/schedules")
 app.register_blueprint(student_routes, url_prefix="/api/students")
-app.register_blueprint(class_routes, url_prefix="/api/class")
+app.register_blueprint(class_routes, url_prefix="/api/classes")
 
 
 # START GLOBAL HTTP CONFIGS

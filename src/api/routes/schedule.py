@@ -8,7 +8,7 @@ from api.utils.database import db
 schedule_route = Blueprint("schedule_routes", __name__)
 
 
-@schedule_route.route("/", methods=["POST"])
+@schedule_route.route("/", methods=["POST"], strict_slashes=False)
 def create_schedule():
     try:
         data = request.get_json()
@@ -21,7 +21,7 @@ def create_schedule():
         return response_with(resp.INVALID_INPUT_422)
 
 
-@schedule_route.route("/", methods=["GET"])
+@schedule_route.route("/", methods=["GET"], strict_slashes=False)
 def get_all_schedule():
 
     fetched = Schedule.query.all()

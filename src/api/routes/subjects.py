@@ -8,7 +8,7 @@ from api.utils.database import db
 subject_routes = Blueprint("subject_routes", __name__)
 
 
-@subject_routes.route("/", methods=["POST"])
+@subject_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_subject():
 
     try:
@@ -31,7 +31,7 @@ def create_subject():
         return response_with(resp.INVALID_INPUT_422)
 
 
-@subject_routes.route("/", methods=["GET"])
+@subject_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_subjects():
 
     fetched = Subject.query.all()

@@ -8,7 +8,7 @@ from api.utils.database import db
 class_routes = Blueprint("class_routes", __name__)
 
 
-@class_routes.route("/", methods=["POST"])
+@class_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_class():
 
     try:
@@ -22,7 +22,7 @@ def create_class():
         return response_with(resp.INVALID_INPUT_422)
 
 
-@class_routes.route("/", methods=["GET"])
+@class_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_classes():
 
     fetched = Class.query.all()

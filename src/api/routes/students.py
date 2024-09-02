@@ -8,7 +8,7 @@ from api.utils.database import db
 student_routes = Blueprint("student_routes", __name__)
 
 
-@student_routes.route("/", methods=["POST"])
+@student_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_student():
     try:
         data = request.get_json()
@@ -21,7 +21,7 @@ def create_student():
         return response_with(resp.INVALID_INPUT_422)
 
 
-@student_routes.route("/", methods=["GET"])
+@student_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_students():
 
     fetched = Student.query.all()

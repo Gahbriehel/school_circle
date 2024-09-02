@@ -9,7 +9,7 @@ from api.utils.database import db
 admin_routes = Blueprint("admin_routes", __name__)
 
 
-@admin_routes.route("/", methods=["POST"])
+@admin_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_admin():
 
     try:
@@ -23,7 +23,7 @@ def create_admin():
         return response_with(resp.INVALID_INPUT_422)
 
 
-@admin_routes.route("/", methods=["GET"])
+@admin_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_admins_list():
     fetched = Admin.query.all()
     admin_schema = AdminSchema(many=True)
