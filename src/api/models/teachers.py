@@ -12,6 +12,9 @@ Teachers Data
 
 
 class Teacher(db.Model):
+    """
+    Object structure for teacher table
+    """
 
     __tablename__ = "teachers"
     id = db.Column(db.String(60), primary_key=True)

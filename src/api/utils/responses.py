@@ -19,6 +19,12 @@ MISSING_PARAMETERS_422 = {
     "message": "Missing parameters.",
 }
 
+CONFLICT_409 = {
+    "http_code": 409,
+    "code": "UniqueAttribute",
+    "message": "Unique Attribute",
+}
+
 BAD_REQUEST_400 = {"http_code": 400, "code": "badRequest", "message": "Bad request"}
 
 SERVER_ERROR_500 = {"http_code": 500, "code": "serverError", "message": "Server error"}

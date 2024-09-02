@@ -8,6 +8,7 @@ from api.utils.responses import response_with
 import api.utils.responses as resp
 from api.routes.admin import admin_routes
 from api.routes.teachers import teacher_routes
+from api.routes.subjects import subject_routes
 
 
 app = Flask(__name__)
@@ -31,6 +32,7 @@ with app.app_context():
 # TODO blueprint route register to be done here
 app.register_blueprint(admin_routes, url_prefix="/api/admins")
 app.register_blueprint(teacher_routes, url_prefix="/api/teachers")
+app.register_blueprint(subject_routes, url_prefix="/api/subjects")
 
 
 # START GLOBAL HTTP CONFIGS
