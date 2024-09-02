@@ -28,7 +28,7 @@ class Admin(db.Model):
 
     def __init__(self, first_name, last_name, username, email, password, id=None):
         if not id:
-            self.id = uuid4()
+            self.id = str(uuid4())
         self.created_at = datetime.utcnow()
         self.first_name = first_name
         self.last_name = last_name
@@ -53,6 +53,10 @@ class Admin(db.Model):
     def verify_hash(password, hash):
         return sha256.verify(password, hash)
 
+    @classmethod
+    def find_by_username(cls, username):
+        return cls.query.filter_by(username=username).first()
+
 
 class AdminSchema(SQLAlchemyAutoSchema):
     class Meta:
@@ -60,11 +64,11 @@ class AdminSchema(SQLAlchemyAutoSchema):
         sqla_session = db.session
         load_instance = True
 
-    id = fields.String()
+    id = fields.String(dump_only=True)
     username = fields.String(required=True)
     first_name = fields.String(required=True)
     last_name = fields.String(required=True)
     email = fields.String(required=True)
-    created_at = fields.String()
-    password = fields.String()
+    created_at = fields.DateTime(dump_only=True)
+    password = fields.String(load_only=True)
     # updated_at = fields.String(required=True)
