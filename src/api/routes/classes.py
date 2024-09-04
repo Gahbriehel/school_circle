@@ -2,8 +2,9 @@ from flask import Blueprint
 from flask import request
 from api.utils.responses import response_with
 from api.utils import responses as resp
-from api.models.classes import Class, ClassSchema
+from api.models.classes import ClassName
 from api.utils.database import db
+from api.models.schemas import ClassSchema
 
 class_routes = Blueprint("class_routes", __name__)
 
@@ -25,7 +26,39 @@ def create_class():
 @class_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_classes():
 
-    fetched = Class.query.all()
+    fetched = ClassName.query.all()
     class_schema = ClassSchema(many=True)
     classes = class_schema.dump(fetched)
     return response_with(resp.SUCCESS_200, value={"classes": classes})
+
+
+@class_routes.route("/<id>", methods=["PUT"], strict_slashes=False)
+def update_class(id):
+
+    try:
+        data = request.get_json()
+        get_class = ClassName.query.get(id)
+
+        if data.get("teacher_id"):
+            get_class.teacher_id = data["teacher_id"]
+
+        db.session.add(get_class)
+        db.session.commit()
+        class_schema = ClassSchema()
+        classes = class_schema.dump(get_class)
+        return response_with(resp.SUCCESS_204, value={"class": classes})
+    except Exception as e:
+        print(e)
+        return response_with(resp.INVALID_FILED_NAME_SENT_422)
+
+
+@class_routes.route("/<id>", methods=["DELETE"], strict_slashes=False)
+def delete_class(id):
+
+    try:
+        get_class = ClassName.query.get(id)
+        db.session.delete(get_class)
+        db.session.commit()
+        return response_with(resp.SUCCESS_204)
+    except Exception as e:
+        return response_with(resp.SERVER_ERROR_500)

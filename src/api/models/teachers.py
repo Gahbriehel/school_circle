@@ -33,11 +33,15 @@ class Teacher(db.Model):
     country = db.Column(db.String(128), nullable=True)
     emergency_contact = db.Column(db.String(15), nullable=True)
     phone_number = db.Column(db.String(15), nullable=True)
-
     password = db.Column(db.String(128), nullable=False)
     username = db.Column(db.String(128), unique=True, nullable=False)
 
-    def __init__(self, first_name, last_name, email, username, password, **kwargs):
+    class_id = db.Column(db.String(60), db.ForeignKey("classes.id"))
+    class_assigned = db.relationship("ClassName", back_populates="teachers")
+
+    def __init__(
+        self, first_name, last_name, email, username, password, class_id=None, **kwargs
+    ):  # class_assigned
 
         self.id = str(uuid4())
         self.created_at = datetime.utcnow()
@@ -57,6 +61,7 @@ class Teacher(db.Model):
         self.country = kwargs.get("country")
         self.emergency_contact = kwargs.get("emergency_contact")
         self.phone_number = kwargs.get("phone_number")
+        self.class_id = class_id
 
     def create(self):
         db.session.add(self)
@@ -74,32 +79,3 @@ class Teacher(db.Model):
     @staticmethod
     def verify_hash(password, hash):
         return sha256.verify(password, hash)
-
-
-class TeacherSchema(SQLAlchemyAutoSchema):
-    """
-    Teacher schema for serializing and deserializing Teacher object
-    """
-
-    class Meta:
-        model = Teacher
-        sqla_session = db.session
-        load_instance = True
-
-    id = fields.String(dump_only=True)
-    created_at = fields.DateTime(dump_only=True)
-    first_name = fields.String(required=True)
-    last_name = fields.String(required=True)
-    gender = fields.String()
-    email = fields.Email(required=True)
-    dob = fields.Date()
-    relationship_status = fields.String()
-    nationality = fields.String()
-    street = fields.String()
-    city = fields.String()
-    state = fields.String()
-    country = fields.String()
-    emergency_contact = fields.String()
-    phone_number = fields.String()
-    username = fields.String(required=True)
-    password = fields.String(load_only=True)

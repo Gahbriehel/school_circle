@@ -6,16 +6,21 @@ from api.config.config import DevelopmentConfig, ProductionConfig, TestingConfig
 from api.utils.database import db
 from api.utils.responses import response_with
 import api.utils.responses as resp
-from api.routes.admin import admin_routes
-from api.routes.teachers import teacher_routes
-from api.routes.subjects import subject_routes
-from api.routes.parents import parent_routes
-from api.routes.schedule import schedule_route
-from api.routes.students import student_routes
-from api.routes.classes import class_routes
 
 
 app = Flask(__name__)
+# import api.models.association_tables as ass_table  (Been unable to implement many-to-many due to dependency collition among imports)
+
+# from api.routes.admin import admin_routes
+# from api.routes.parents import parent_routes
+# from api.routes.schedule import schedule_route
+# from api.routes.students import student_routes
+
+
+from api.routes.teachers import teacher_routes
+from api.routes.classes import class_routes
+from api.routes.subjects import subject_routes
+from api.routes.class_subject import class_subject_r
 
 
 if os.getenv("WORK_ENV") == "PROD":
@@ -35,13 +40,16 @@ with app.app_context():
 
 
 # TODO blueprint route register to be done here
-app.register_blueprint(admin_routes, url_prefix="/api/admins")
+
 app.register_blueprint(teacher_routes, url_prefix="/api/teachers")
 app.register_blueprint(subject_routes, url_prefix="/api/subjects")
-app.register_blueprint(parent_routes, url_prefix="/api/parents")
-app.register_blueprint(schedule_route, url_prefix="/api/schedules")
-app.register_blueprint(student_routes, url_prefix="/api/students")
+app.register_blueprint(class_subject_r, url_prefix="/api/class_sub")
 app.register_blueprint(class_routes, url_prefix="/api/classes")
+
+# app.register_blueprint(admin_routes, url_prefix="/api/admins")
+# app.register_blueprint(parent_routes, url_prefix="/api/parents")
+# app.register_blueprint(schedule_route, url_prefix="/api/schedules")
+# app.register_blueprint(student_routes, url_prefix="/api/students")
 
 
 # START GLOBAL HTTP CONFIGS

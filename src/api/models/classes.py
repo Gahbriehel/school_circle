@@ -5,12 +5,13 @@ from passlib.hash import pbkdf2_sha256 as sha256
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema  # type: ignore
 from marshmallow import fields
 
+
 """
 Class Data
 """
 
 
-class Class(db.Model):
+class ClassName(db.Model):
     """
     Object structure for class table
     """
@@ -20,6 +21,10 @@ class Class(db.Model):
     created_at = db.Column(db.DateTime, server_default=db.func.now())
 
     class_name = db.Column(db.String(128), unique=True, nullable=False)
+
+    teachers = db.relationship("Teacher", back_populates="class_assigned", uselist=True)
+
+    subjects = db.relationship("ClassSubject", back_populates="class_d")
 
     def __init__(self, class_name):
         """
@@ -34,19 +39,3 @@ class Class(db.Model):
         db.session.add(self)
         db.session.commit()
         return self
-
-
-class ClassSchema(SQLAlchemyAutoSchema):
-    """
-    Class schema for serializing and desrializing Class object
-    """
-
-    class Meta:
-        model = Class
-        sqla_session = db.session
-        load_instance = True
-
-    id = fields.String(dump_only=True)
-    created_at = fields.DateTime(dump_only=True)
-
-    class_name = fields.String(required=True)

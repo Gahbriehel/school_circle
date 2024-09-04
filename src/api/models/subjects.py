@@ -20,6 +20,7 @@ class Subject(db.Model):
     created_at = db.Column(db.DateTime, server_default=db.func.now())
 
     subject_name = db.Column(db.String(128), unique=True, nullable=False)
+    classes = db.relationship("ClassSubject", back_populates="subject")
 
     def __init__(self, subject_name):
         """
@@ -37,18 +38,3 @@ class Subject(db.Model):
     @classmethod
     def find_by_subject_name(cls, subject_name):
         return cls.query.filter_by(subject_name=subject_name).first()
-
-
-class SubjectSchema(SQLAlchemyAutoSchema):
-    """
-    Subject schema for serializing and deserializing Subject object
-    """
-
-    class Meta:
-        model = Subject
-        sqla_session = db.session
-        load_instance = True
-
-    id = fields.String(dump_only=True)
-    created_at = fields.DateTime(dump_only=True)
-    subject_name = fields.String(required=True)

@@ -2,7 +2,8 @@ from flask import Blueprint
 from flask import request
 from api.utils.responses import response_with
 from api.utils import responses as resp
-from api.models.subjects import Subject, SubjectSchema
+from api.models.subjects import Subject
+from api.models.schemas import SubjectSchema
 from api.utils.database import db
 
 subject_routes = Blueprint("subject_routes", __name__)
