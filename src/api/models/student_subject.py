@@ -7,3 +7,5 @@ class StudentsSubject(db.Model):
     """
     Many-to-many relationship for students and subjects
     """
+
+    pass
