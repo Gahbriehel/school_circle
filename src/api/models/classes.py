@@ -26,6 +26,8 @@ class ClassName(db.Model):
 
     subjects = db.relationship("ClassSubject", back_populates="class_d")
 
+    schedules = db.relationship("Schedule", back_populates="class_d")
+
     def __init__(self, class_name):
         """
         Initiates the class table

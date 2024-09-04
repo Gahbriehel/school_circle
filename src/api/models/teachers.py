@@ -39,6 +39,10 @@ class Teacher(db.Model):
     class_id = db.Column(db.String(60), db.ForeignKey("classes.id"))
     class_assigned = db.relationship("ClassName", back_populates="teachers")
 
+    subjects = db.relationship("SubjectTeacher", back_populates="teacher")
+
+    schedules = db.relationship("Schedule", back_populates="teacher")
+
     def __init__(
         self, first_name, last_name, email, username, password, class_id=None, **kwargs
     ):  # class_assigned

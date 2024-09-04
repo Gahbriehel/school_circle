@@ -50,9 +50,7 @@ def update_teacher(id):
 
     try:
         data = request.get_json()
-        print("here 1")
         get_teacher = Teacher.query.get(id)
-        print("here 2")
 
         if data:
 

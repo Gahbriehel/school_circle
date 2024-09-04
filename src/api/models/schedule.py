@@ -22,7 +22,24 @@ class Schedule(db.Model):
     start_time = db.Column(db.String(20), nullable=False)
     end_time = db.Column(db.String(20), nullable=False)
 
-    def __init__(self, day_of_the_week, start_time, end_time):
+    class_id = db.Column(db.String(60), db.ForeignKey("classes.id"))
+    class_d = db.relationship("ClassName", back_populates="schedules")
+
+    subject_id = db.Column(db.String(60), db.ForeignKey("subjects.id"))
+    subject = db.relationship("Subject", back_populates="schedules")
+
+    teacher_id = db.Column(db.String(60), db.ForeignKey("teachers.id"))
+    teacher = db.relationship("Teacher", back_populates="schedules")
+
+    def __init__(
+        self,
+        day_of_the_week,
+        start_time,
+        end_time,
+        class_id=None,
+        subject_id=None,
+        teacher_id=None,
+    ):
         """
         Inits the Schedule Management Table
         """
@@ -33,25 +50,11 @@ class Schedule(db.Model):
         self.day_of_the_week = day_of_the_week
         self.start_time = start_time
         self.end_time = end_time
+        self.class_id = class_id
+        self.subject_id = subject_id
+        self.teacher_id = teacher_id
 
     def create(self):
         db.session.add(self)
         db.session.commit()
         return self
-
-
-class ScheduleSchema(SQLAlchemyAutoSchema):
-    """
-    ScheduleSchema for serializing and deserializing schedule object
-    """
-
-    class Meta:
-        model = Schedule
-        sqla_session = db.session
-        load_instance = True
-
-    id = fields.String(dump_only=True)
-    created_at = fields.DateTime(dump_only=True)
-    day_of_the_week = fields.Integer()
-    start_time = fields.String(required=True)
-    end_time = fields.String(required=True)

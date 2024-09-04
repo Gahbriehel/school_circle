@@ -5,6 +5,8 @@ from api.models.teachers import Teacher
 from marshmallow import fields
 from api.models.subjects import Subject
 from api.models.class_subject import ClassSubject
+from api.models.subject_teacher import SubjectTeacher
+from api.models.schedule import Schedule
 
 
 class TeacherSchema(SQLAlchemyAutoSchema):
@@ -38,14 +40,14 @@ class TeacherSchema(SQLAlchemyAutoSchema):
     password = fields.String(load_only=True)
     class_assigned = fields.Pluck("ClassSchema", "class_name", dump_only=True)
     class_id = fields.String(load_only=True)
+    subjects = fields.List(fields.Nested("SubjectTeacherSchema", only=["subject"]))
+    schedules = fields.List(fields.Nested("ScheduleSchema", exclude=["teacher"]))
 
 
 class ClassSchema(SQLAlchemyAutoSchema):
     """
     Class schema for serializing and desrializing Class object
     """
-
-    # from api.models.association_tables import ClassSubject
 
     class Meta:
         model = ClassName
@@ -59,6 +61,7 @@ class ClassSchema(SQLAlchemyAutoSchema):
         fields.Nested("TeacherSchema", only=["first_name", "last_name", "id"])
     )
     subjects = fields.List(fields.Nested("ClassSubjectSchema", only=["subject"]))
+    schedules = fields.List(fields.Nested("ScheduleSchema"))
 
 
 class SubjectSchema(SQLAlchemyAutoSchema):
@@ -75,6 +78,8 @@ class SubjectSchema(SQLAlchemyAutoSchema):
     created_at = fields.DateTime(dump_only=True)
     subject_name = fields.String(required=True)
     classes = fields.List(fields.Nested("ClassSubjectSchema", only=["class_d"]))
+    teachers = fields.List(fields.Nested("SubjectTeacherSchema", only=["teacher"]))
+    schedules = fields.List(fields.Nested("ScheduleSchema"))
 
 
 class ClassSubjectSchema(SQLAlchemyAutoSchema):
@@ -92,3 +97,53 @@ class ClassSubjectSchema(SQLAlchemyAutoSchema):
     subject_id = fields.String(required=True, load_only=True)
     class_d = fields.Pluck("ClassSchema", "class_name", dump_only=True)
     subject = fields.Pluck("SubjectSchema", "subject_name", dump_only=True)
+
+
+"""
+Subject Teacher Schema for many-to-many relationship
+"""
+
+
+class SubjectTeacherSchema(SQLAlchemyAutoSchema):
+
+    class Meta:
+        """
+        Meta description for outer class
+        """
+
+        model = SubjectTeacher
+        sqla_session = db.session
+        load_instance = True
+
+    teacher_id = fields.String(required=True, load_only=True)
+    subject_id = fields.String(required=True, load_only=True)
+
+    teacher = fields.List(
+        fields.Nested("TeacherSchema", only=["first_name", "last_name"])
+    )
+    subject = fields.List(fields.Nested("SubjectSchema", only=["subject_name"]))
+
+
+class ScheduleSchema(SQLAlchemyAutoSchema):
+    """
+    ScheduleSchema for serializing and deserializing schedule object
+    """
+
+    class Meta:
+        model = Schedule
+        sqla_session = db.session
+        load_instance = True
+
+    id = fields.String(dump_only=True)
+    created_at = fields.DateTime(dump_only=True)
+    day_of_the_week = fields.Integer()
+    start_time = fields.String(required=True)
+    end_time = fields.String(required=True)
+    class_id = fields.String(load_only=True, required=True)
+    class_d = fields.Pluck("ClassSchema", "class_name", dump_only=True)
+    subject_id = fields.String(load_only=True, required=True)
+    subject = fields.Pluck("SubjectSchema", "subject_name", dump_only=True)
+    teacher_id = fields.String(load_only=True, required=True)
+    teacher = fields.Nested(
+        "TeacherSchema", only=["first_name", "last_name", "id"], dump_only=True
+    )
