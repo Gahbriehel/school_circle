@@ -34,7 +34,14 @@ class Student(db.Model):
     phone_number = db.Column(db.String(15), nullable=True)
     password = db.Column(db.String(128), nullable=False)
 
-    def __init__(self, first_name, last_name, email, username, password, **kwargs):
+    subjects = db.relationship("StudentsSubject", back_populates="student")
+
+    class_id = db.Column(db.String(60), db.ForeignKey("classes.id"))
+    class_d = db.relationship("ClassName", back_populates="students")
+
+    def __init__(
+        self, first_name, last_name, email, username, password, class_id=None, **kwargs
+    ):
 
         self.id = str(uuid4())
         self.created_at = datetime.utcnow()
@@ -69,30 +76,3 @@ class Student(db.Model):
     @staticmethod
     def verify_hash(password, hash):
         return sha256.verify(password, hash)
-
-
-class StudentSchema(SQLAlchemyAutoSchema):
-    """
-    Student schema for serializing and deserializing Student object
-    """
-
-    class Meta:
-        model = Student
-        sqla_session = db.session
-        load_instance = True
-
-    id = fields.String(dump_only=True)
-    created_at = fields.DateTime(dump_only=True)
-    first_name = fields.String(required=True)
-    last_name = fields.String(required=True)
-    gender = fields.String()
-    email = fields.Email(required=True)
-    dob = fields.Date()
-    nationality = fields.String()
-    street = fields.String()
-    city = fields.String()
-    state = fields.String()
-    country = fields.String()
-    phone_number = fields.String()
-    username = fields.String(required=True)
-    password = fields.String(load_only=True)

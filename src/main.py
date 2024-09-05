@@ -13,13 +13,13 @@ app = Flask(__name__)
 
 # from api.routes.admin import admin_routes
 # from api.routes.parents import parent_routes
-# from api.routes.students import student_routes
-
+from api.routes.students import student_routes
 from api.routes.schedule import schedule_route
 from api.routes.teachers import teacher_routes
 from api.routes.classes import class_routes
 from api.routes.subjects import subject_routes
 from api.routes.class_subject import class_subject_r
+from api.routes.student_subject import st_subject
 
 
 if os.getenv("WORK_ENV") == "PROD":
@@ -45,10 +45,10 @@ app.register_blueprint(subject_routes, url_prefix="/api/subjects")
 app.register_blueprint(class_subject_r, url_prefix="/api/class_sub")
 app.register_blueprint(class_routes, url_prefix="/api/classes")
 app.register_blueprint(schedule_route, url_prefix="/api/schedules")
-
+app.register_blueprint(student_routes, url_prefix="/api/students")
+app.register_blueprint(st_subject, url_prefix="/api/student_subject")
 # app.register_blueprint(admin_routes, url_prefix="/api/admins")
 # app.register_blueprint(parent_routes, url_prefix="/api/parents")
-# app.register_blueprint(student_routes, url_prefix="/api/students")
 
 
 # START GLOBAL HTTP CONFIGS

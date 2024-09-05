@@ -28,6 +28,8 @@ class ClassName(db.Model):
 
     schedules = db.relationship("Schedule", back_populates="class_d")
 
+    students = db.relationship("Student", back_populates="class_d")
+
     def __init__(self, class_name):
         """
         Initiates the class table

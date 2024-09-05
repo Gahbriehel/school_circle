@@ -25,6 +25,8 @@ class Subject(db.Model):
     teachers = db.relationship("SubjectTeacher", back_populates="subject")
     schedules = db.relationship("Schedule", back_populates="subject")
 
+    students = db.relationship("StudentsSubject", back_populates="subject")
+
     def __init__(self, subject_name):
         """
         Inits the subject object
