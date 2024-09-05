@@ -51,7 +51,7 @@ def update_student(id):
                 get_student.class_id = data["class_id"]
 
         student_schema = StudentSchema()
-        get_student = student_schema.load(data)
+        db.session.add(get_student)
         db.session.commit()
         student = student_schema.dump(get_student)
         return response_with(resp.SUCCESS_204, value={"student": student})
