@@ -2,12 +2,10 @@ from datetime import datetime
 from api.utils.database import db
 from uuid import uuid4
 from passlib.hash import pbkdf2_sha256 as sha256
-from marshmallow_sqlalchemy import SQLAlchemyAutoSchema  # type: ignore
-from marshmallow import fields
 
 
 """
-Teachers Data
+Teachers Data Model
 """
 
 
@@ -17,8 +15,13 @@ class Teacher(db.Model):
     """
 
     __tablename__ = "teachers"
+
+    # Columns
     id = db.Column(db.String(60), primary_key=True)
-    created_at = db.Column(db.DateTime, server_default=db.func.now())
+
+    # Timestampss
+    created_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
 
     first_name = db.Column(db.String(128), nullable=False)
     last_name = db.Column(db.String(128), nullable=False)
@@ -36,6 +39,7 @@ class Teacher(db.Model):
     password = db.Column(db.String(128), nullable=False)
     username = db.Column(db.String(128), unique=True, nullable=False)
 
+    # Relationships
     class_id = db.Column(db.String(60), db.ForeignKey("classes.id"))
     class_assigned = db.relationship("ClassName", back_populates="teachers")
 
@@ -45,10 +49,14 @@ class Teacher(db.Model):
 
     def __init__(
         self, first_name, last_name, email, username, password, class_id=None, **kwargs
-    ):  # class_assigned
+    ):
+        """
+        Initializes a new Teacher instance
+        """
 
         self.id = str(uuid4())
         self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
@@ -68,18 +76,30 @@ class Teacher(db.Model):
         self.class_id = class_id
 
     def create(self):
+        """
+        Adds the Teacher instance to the sesssion and commits it to the database
+        """
         db.session.add(self)
         db.session.commit()
         return self
 
     @classmethod
     def find_by_username(cls, username):
+        """
+        Finds a Teacher by their username
+        """
         return cls.query.filter_by(username=username).first()
 
     @staticmethod
     def generate_hash(password):
+        """
+        Generates a hashed password
+        """
         return sha256.hash(password)
 
     @staticmethod
     def verify_hash(password, hash):
+        """
+        Verifies if the provided passsword matches the hashed password
+        """
         return sha256.verify(password, hash)

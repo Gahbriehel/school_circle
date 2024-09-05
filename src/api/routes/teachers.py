@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint
 from flask import request
 from api.utils.responses import response_with
@@ -27,10 +28,14 @@ def create_teacher():
 @teacher_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_teachers():
 
-    fetched = Teacher.query.all()
-    teacher_schema = TeacherSchema(many=True)
-    teachers = teacher_schema.dump(fetched)
-    return response_with(resp.SUCCESS_200, value={"teachers": teachers})
+    try:
+        fetched = Teacher.query.all()
+        teacher_schema = TeacherSchema(many=True)
+        teachers = teacher_schema.dump(fetched)
+        return response_with(resp.SUCCESS_200, value={"teachers": teachers})
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))
 
 
 @teacher_routes.route("/<id>", methods=["DELETE"], strict_slashes=False)
@@ -52,17 +57,17 @@ def update_teacher(id):
         data = request.get_json()
         get_teacher = Teacher.query.get(id)
 
+        if not get_teacher:
+            return response_with(resp.SERVER_ERROR_404, message="Teacher not found")
+
         if data:
-
-            if data.get("class_id"):
-                get_teacher.class_id = data["class_id"]
-
-        db.session.add(get_teacher)
-        db.session.commit()
+            data["updated_at"] = datetime.utcnow()
 
         teacher_schema = TeacherSchema()
+        get_teacher = teacher_schema.load(data)
+        db.session.commit()
         teacher = teacher_schema.dump(get_teacher)
         return response_with(resp.SUCCESS_204, value={"teacher": teacher})
     except Exception as e:
         print(e)
-        return response_with(resp.INVALID_FILED_NAME_SENT_422)
+        return response_with(resp.INVALID_INPUT_422)

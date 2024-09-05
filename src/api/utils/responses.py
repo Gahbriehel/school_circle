@@ -55,8 +55,8 @@ def response_with(
     if value is not None:
         result.update(value)
 
-    if response.get("message", None) is not None:
-        result.update({"message": response["message"]})
+    if message is not None:
+        result.update({"message": message})
 
     result.update({"code": response["code"]})
 
@@ -68,5 +68,6 @@ def response_with(
 
     headers.update({"Access-Control-Allow-Origin": "*"})
     headers.update({"server": "Flask REST API"})
+    headers.update({"Content-Type": "application/json"})
 
     return make_response(jsonify(result), response["http_code"], headers)

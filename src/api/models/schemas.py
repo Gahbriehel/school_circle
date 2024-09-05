@@ -9,6 +9,14 @@ from api.models.subject_teacher import SubjectTeacher
 from api.models.schedule import Schedule
 from api.models.students import Student
 from api.models.student_subject import StudentsSubject
+from api.models.parent_student import ParentStudent
+from api.models.parents import Parent
+from api.models.admin import Admin
+
+
+"""
+Schemas for deserializing and serializing all data models defined from JSON to database and vice versa
+"""
 
 
 class TeacherSchema(SQLAlchemyAutoSchema):
@@ -25,6 +33,7 @@ class TeacherSchema(SQLAlchemyAutoSchema):
 
     id = fields.String(dump_only=True)
     created_at = fields.DateTime(dump_only=True)
+    updated_at = fields.String()
     first_name = fields.String(required=True)
     last_name = fields.String(required=True)
     gender = fields.String()
@@ -58,6 +67,7 @@ class ClassSchema(SQLAlchemyAutoSchema):
 
     id = fields.String(dump_only=True)
     created_at = fields.DateTime(dump_only=True)
+    updated_at = fields.String()
     class_name = fields.String(required=True)
     teachers = fields.List(
         fields.Nested("TeacherSchema", only=["first_name", "last_name", "id"])
@@ -85,12 +95,12 @@ class SubjectSchema(SQLAlchemyAutoSchema):
     classes = fields.List(fields.Nested("ClassSubjectSchema", only=["class_d"]))
     teachers = fields.List(fields.Nested("SubjectTeacherSchema", only=["teacher"]))
     schedules = fields.List(fields.Nested("ScheduleSchema"))
-    students = fields.List(fields.Nested("StudentsSubject", only=["student"]))
+    students = fields.List(fields.Nested("StudentsSubjectSchema", only=["student"]))
 
 
 class ClassSubjectSchema(SQLAlchemyAutoSchema):
     """
-    Initializes the schema for serializing and deserializing the above object
+    ClassSubject schema for serializing and deserializing ClassSubejct object
     """
 
     class Meta:
@@ -103,14 +113,15 @@ class ClassSubjectSchema(SQLAlchemyAutoSchema):
     subject_id = fields.String(required=True, load_only=True)
     class_d = fields.Pluck("ClassSchema", "class_name", dump_only=True)
     subject = fields.Pluck("SubjectSchema", "subject_name", dump_only=True)
-
-
-"""
-Subject Teacher Schema for many-to-many relationship
-"""
+    id = fields.String(dump_only=True)
+    created_at = fields.String(dump_only=True)
+    updated_at = fields.String()
 
 
 class SubjectTeacherSchema(SQLAlchemyAutoSchema):
+    """
+    Subject Teacher Schema for many-to-many relationship
+    """
 
     class Meta:
         """
@@ -142,6 +153,7 @@ class ScheduleSchema(SQLAlchemyAutoSchema):
 
     id = fields.String(dump_only=True)
     created_at = fields.DateTime(dump_only=True)
+    updated_at = fields.String()
     day_of_the_week = fields.Integer()
     start_time = fields.String(required=True)
     end_time = fields.String(required=True)
@@ -167,6 +179,7 @@ class StudentSchema(SQLAlchemyAutoSchema):
 
     id = fields.String(dump_only=True)
     created_at = fields.DateTime(dump_only=True)
+    updated_at = fields.String()
     first_name = fields.String(required=True)
     last_name = fields.String(required=True)
     gender = fields.String()
@@ -183,11 +196,12 @@ class StudentSchema(SQLAlchemyAutoSchema):
     subjects = fields.List(fields.Nested("StudentsSubjectSchema", only=["subject"]))
     class_id = fields.String(load_only=True)
     class_d = fields.Pluck("ClassSchema", "class_name", dump_only=True)
+    parents = fields.List(fields.Nested("ParentStudentSchema", only=["student"]))
 
 
 class StudentsSubjectSchema(SQLAlchemyAutoSchema):
     """
-    Many-to-many relationship for students and subjects
+    StudentsSubject schema for many-to-many relationship
     """
 
     class Meta:
@@ -199,3 +213,66 @@ class StudentsSubjectSchema(SQLAlchemyAutoSchema):
     subject_id = fields.String(load_only=True, required=True)
     subject = fields.Nested("SubjectSchema", only=["subject_name"])
     student = fields.Nested("StudentSchema", only=["first_name", "last_name"])
+    id = fields.String(dump_only=True)
+    created_at = fields.String(dump_only=True)
+    updated_at = fields.String()
+
+
+class ParentSchema(SQLAlchemyAutoSchema):
+    """
+    Parent schema for serializing and deserializing parent object
+    """
+
+    class Meta:
+        model = Parent
+        sqla_session = db.session
+        load_instance = True
+
+    id = fields.String(dump_only=True)
+    created_at = fields.DateTime(dump_only=True)
+    first_name = fields.String(required=True)
+    last_name = fields.String(required=True)
+    phone_number = fields.String()
+    students = fields.List(fields.Nested("ParentStudentSchema", only=["student"]))
+
+
+class ParentStudentSchema(SQLAlchemyAutoSchema):
+    """
+    ParentStudent schema for many-to-many relationship
+    """
+
+    class Meta:
+        model = ParentStudent
+        sqla_session = db.session
+        load_instance = True
+
+    parent_id = fields.String(load_only=True, required=True)
+    student_id = fields.String(load_only=True, required=True)
+
+    student = fields.Nested("StudentSchema", only=["first_name", "last_name"])
+    parent = fields.Nested(
+        "ParentSchema", only=["first_name", "last_name", "phone_number"]
+    )
+    id = fields.String(dump_only=True)
+    created_at = fields.String(dump_only=True)
+    updated_at = fields.String()
+
+
+class AdminSchema(SQLAlchemyAutoSchema):
+    """
+    Admin schema for sserializing and deserializinf Admin object
+    """
+
+    class Meta:
+        model = Admin
+        sqla_session = db.session
+        load_instance = True
+
+    id = fields.String(dump_only=True)
+    username = fields.String(required=True)
+    first_name = fields.String(required=True)
+    last_name = fields.String(required=True)
+    email = fields.String(required=True)
+    created_at = fields.DateTime(dump_only=True)
+    password = fields.String(load_only=True)
+    updated_at = fields.String()

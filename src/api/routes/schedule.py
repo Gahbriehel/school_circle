@@ -25,10 +25,14 @@ def create_schedule():
 @schedule_route.route("/", methods=["GET"], strict_slashes=False)
 def get_all_schedule():
 
-    fetched = Schedule.query.all()
-    schedule_schema = ScheduleSchema(many=True)
-    schedules = schedule_schema.dump(fetched)
-    return response_with(resp.SUCCESS_200, value={"schdules": schedules})
+    try:
+        fetched = Schedule.query.all()
+        schedule_schema = ScheduleSchema(many=True)
+        schedules = schedule_schema.dump(fetched)
+        return response_with(resp.SUCCESS_200, value={"schdules": schedules})
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))
 
 
 @schedule_route.route("/<id>", methods=["PUT"], strict_slashes=False)
@@ -36,6 +40,10 @@ def update_schedule(id):
 
     try:
         get_schedule = Schedule.query.get(id)
+
+        if not get_schedule:
+            return response_with(resp.SERVER_ERROR_404, message="Schedule not found")
+
         data = request.get_json()
 
         print("Right here")
@@ -49,7 +57,6 @@ def update_schedule(id):
                 get_schedule.teacher_id = data["teacher_id"]
                 print("just check after")
 
-        db.session.add(get_schedule)
         db.session.commit()
 
         Schedule_schema = ScheduleSchema()
@@ -58,3 +65,18 @@ def update_schedule(id):
     except Exception as e:
         print(e)
         return response_with(resp.INVALID_FILED_NAME_SENT_422)
+
+
+@schedule_route.route("/<id>", methods=["DELETE"], strict_slashes=False)
+def delete_schedule(id):
+    try:
+        schedule = Schedule.query.get(id)
+
+        if not schedule:
+            return response_with(resp.SERVER_ERROR_404, message="Schedule not found")
+        db.session.delete(schedule)
+        db.session.commit()
+        return response_with(resp.SUCCESS_204, message="Schedule deleted successfully")
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))

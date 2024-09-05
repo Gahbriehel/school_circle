@@ -1,6 +1,8 @@
 import os
 from urllib.parse import quote_plus
 
+
+# Encode the password for safe URL usage
 passwd = quote_plus(os.getenv("SCH_CIR_DB_PASS"))
 
 

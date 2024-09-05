@@ -1,27 +1,29 @@
 from datetime import datetime
 from api.utils.database import db
 from uuid import uuid4
-from marshmallow_sqlalchemy import SQLAlchemyAutoSchema  # type: ignore
-from marshmallow import fields
 
 """
-Schedule Management Table
+Schedule Data Model
 """
 
 
 class Schedule(db.Model):
     """
-    Object structure for schedule
+    Represents the structure of the schdules table for managing class shcedule
     """
 
     __tablename__ = "schedules"
+
+    # Column definitions
     id = db.Column(db.String(60), primary_key=True)
-    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    created_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
 
     day_of_the_week = db.Column(db.Integer, nullable=False)
     start_time = db.Column(db.String(20), nullable=False)
     end_time = db.Column(db.String(20), nullable=False)
 
+    # Foreign key relationships
     class_id = db.Column(db.String(60), db.ForeignKey("classes.id"))
     class_d = db.relationship("ClassName", back_populates="schedules")
 
@@ -41,10 +43,10 @@ class Schedule(db.Model):
         teacher_id=None,
     ):
         """
-        Inits the Schedule Management Table
+        Initializes a Schedule instance with provided details
         """
 
-        self.id = str(uuid4())
+        self.id = str(uuid4())  # Generates a unique ID for the schedule
         self.created_at = datetime.utcnow()
 
         self.day_of_the_week = day_of_the_week
@@ -55,6 +57,9 @@ class Schedule(db.Model):
         self.teacher_id = teacher_id
 
     def create(self):
+        """
+        Adds the schedule instance to the session and commits it
+        """
         db.session.add(self)
         db.session.commit()
         return self

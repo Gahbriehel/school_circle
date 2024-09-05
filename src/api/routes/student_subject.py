@@ -13,10 +13,14 @@ st_subject = Blueprint("st_subject", __name__)
 @st_subject.route("/", methods=["GET"], strict_slashes=False)
 def get_all():
 
-    fetched = StudentsSubject.query.all()
-    st_subject_schemas = StudentsSubjectSchema(many=True)
-    st_subjects = st_subject_schemas.dump(fetched)
-    return response_with(resp.SUCCESS_200, value={"st_subjects": st_subjects})
+    try:
+        fetched = StudentsSubject.query.all()
+        st_subject_schemas = StudentsSubjectSchema(many=True)
+        st_subjects = st_subject_schemas.dump(fetched)
+        return response_with(resp.SUCCESS_200, value={"st_subjects": st_subjects})
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))
 
 
 @st_subject.route("/", methods=["POST"], strict_slashes=False)
@@ -31,3 +35,22 @@ def add_sub_student():
     except Exception as e:
         print(e)
         return response_with(resp.INVALID_INPUT_422)
+
+
+@st_subject.route("<id>", methods=["DELETE"], strict_slashes=False)
+def delete_sub_student(id):
+
+    try:
+        sub_st = StudentsSubject.query.get(id)
+
+        if sub_st is None:
+            return response_with(
+                resp.SERVER_ERROR_404, message="SubjectStudent not found"
+            )
+        db.session.delete(sub_st)
+        db.session.commit()
+
+        return response_with(resp.SUCCESS_204, message="Student-Subject deleted")
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))

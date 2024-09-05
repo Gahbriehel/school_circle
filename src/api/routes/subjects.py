@@ -35,7 +35,50 @@ def create_subject():
 @subject_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_subjects():
 
-    fetched = Subject.query.all()
-    subject_schema = SubjectSchema(many=True)
-    subjects = subject_schema.dump(fetched)
-    return response_with(resp.SUCCESS_200, value={"subjects": subjects})
+    try:
+        fetched = Subject.query.all()
+        subject_schema = SubjectSchema(many=True)
+        subjects = subject_schema.dump(fetched)
+        return response_with(resp.SUCCESS_200, value={"subjects": subjects})
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))
+
+
+@subject_routes.route("/<id>", methods=["PUT"], strict_slashes=False)
+def update_subject(id):
+
+    try:
+        subject = Subject.query.get(id)
+
+        if not subject:
+            return response_with(resp.SERVER_ERROR_404, message="Subject not found")
+        data = request.get_json()
+
+        db.session.add(subject)
+        db.session.commit()
+
+        subject_schema = SubjectSchema()
+        result = subject_schema.dump(subject)
+        return response_with(resp.SUCCESS_200, value={"subject": result})
+    except Exception as e:
+        print(e)
+        return response_with(resp.INVALID_INPUT_422)
+
+
+@subject_routes.route("/<id>", methods=["DELETE"], strict_slashes=False)
+def delete_subject(id):
+
+    try:
+        subject = Subject.query.get(id)
+
+        if not subject:
+            return response_with(resp.SERVER_ERROR_404, message="Subject not found")
+
+        db.session.delete(subject)
+        db.session.commit()
+        return response_with(resp.SUCCESS_204, message="Subject deleted")
+
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))

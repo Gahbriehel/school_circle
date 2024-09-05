@@ -4,17 +4,25 @@ from uuid import uuid4
 
 
 """
-Subject and Teacher Association table
+Subject and Teacher Data Model
 """
 
 
 class SubjectTeacher(db.Model):
     """
-    Subject Teachers
+    Represents the relationship between subjects and teachers
     """
 
-    created_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
+    __tablename__ = "subject_teacher"
 
+    # Column definitions
+    id = db.Column(db.String(60), nullable=False, unique=True)
+
+    # Timestamp
+    created_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
+    updated_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
+
+    # Composite keys
     teacher_id = db.Column(
         db.String(60), db.ForeignKey("teachers.id"), nullable=False, primary_key=True
     )
@@ -22,6 +30,7 @@ class SubjectTeacher(db.Model):
         db.String(60), db.ForeignKey("subjects.id"), nullable=False, primary_key=True
     )
 
+    # Relationships
     teacher = db.relationship("Teacher", back_populates="subjects")
     subject = db.relationship("Subject", back_populates="teachers")
 
@@ -30,10 +39,13 @@ class SubjectTeacher(db.Model):
         Initializes the Subject Teacher Object
         """
         self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
+        self.id = str(uuid4())
         self.teacher_id = teacher_id
         self.subject_id - subject_id
 
     def create(self):
+        # Adds the Subject Teacher instance to the session and commits to it
         db.session.add(self)
         db.session.commit()
         return self
