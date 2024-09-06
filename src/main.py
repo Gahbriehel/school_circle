@@ -2,6 +2,7 @@ import logging
 import os
 import sys
 from flask import Flask, jsonify
+from flask_cors import CORS
 from api.config.config import DevelopmentConfig, ProductionConfig, TestingConfig
 from api.utils.database import db
 from api.utils.responses import response_with
@@ -10,6 +11,7 @@ import api.utils.responses as resp
 
 # Initialize the Flask app
 app = Flask(__name__)
+CORS(app)
 
 
 # Import routes

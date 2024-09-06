@@ -34,6 +34,7 @@ class Student(db.Model):
     state = db.Column(db.String(128), nullable=True)
     phone_number = db.Column(db.String(15), nullable=True)
     password = db.Column(db.String(128), nullable=False)
+    confirm_password = db.Column(db.String(128), nullable=False)
 
     # Relationships
     subjects = db.relationship("StudentsSubject", back_populates="student")
@@ -42,7 +43,7 @@ class Student(db.Model):
     parents = db.relationship("ParentStudent", back_populates="student")
 
     def __init__(
-        self, first_name, last_name, email, username, password, class_id=None, **kwargs
+        self, first_name, last_name, email, username, password, confirm_password, class_id=None, **kwargs
     ):
         """
         Initializes a new student instance
@@ -56,6 +57,7 @@ class Student(db.Model):
         self.email = email
         self.username = username
         self.password = self.generate_hash(password)
+        self.confirm_password = self.generate_hash(confirm_password)
 
         # Optional fields
         self.gender = kwargs.get("gender")

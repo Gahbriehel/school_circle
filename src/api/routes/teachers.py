@@ -15,10 +15,12 @@ teacher_routes = Blueprint("teacher_routes", __name__)
 def create_teacher():
 
     try:
+        print(request.get_data())
         data = request.get_json()
         teacher_schema = TeacherSchema()
         teacher = teacher_schema.load(data)
         result = teacher_schema.dump(teacher.create())
+        print("received data:", data)
         return response_with(resp.SUCCESS_201, value={"teacher": result})
     except Exception as e:
         print(e)

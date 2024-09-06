@@ -16,6 +16,7 @@ def create_student():
         student_schema = StudentSchema()
         student = student_schema.load(data)
         result = student_schema.dump(student.create())
+        print("received data:", data)
         return response_with(resp.SUCCESS_201, value={"student": result})
     except Exception as e:
         print(e)
