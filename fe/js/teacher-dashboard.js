@@ -1,4 +1,4 @@
 let welcomeText = document.getElementById("welcome");
-let profileName = "Gabriel";
+let profileName = "Morenike";
 profileName = profileName.toUpperCase();
 welcomeText.innerHTML = `WELCOME ${profileName}!`;
