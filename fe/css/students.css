@@ -1,0 +1,99 @@
+:root {
+  --color-main: #016064;
+  --color-primary-variant: #153436;
+  --color-secondary: #ff7b02;
+  --color-secondary-variant: #e5a55d;
+  --color-tertiary-variant: #7b4e19;
+  --color-bg-1: #000e17;
+  --color-bg-2: #001e2d;
+  --color-bg-3: #012734;
+  --color-bg-4: #003347;
+  --color-light: #85a2b2;
+  --color-white: hsl(0, 0%, 90%);
+  --color-bg-5: #32393b;
+
+  --container-width-lg: 88%;
+  --container-width-md: 92%;
+
+  --transition: all 400ms ease;
+}
+
+.all {
+  margin-top: 10rem;
+  color: var(--color-main);
+}
+
+.greeting {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--color-main);
+  text-align: center;
+}
+
+.student-form,
+#items {
+  margin-left: 2rem;
+}
+
+#name #weight #price {
+  width: 20rem;
+  height: 2rem;
+}
+
+#submit {
+  background-color: black;
+  color: white;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 4px;
+}
+
+.student-table {
+  margin-top: 4rem;
+}
+
+.table {
+  border-radius: 8px;
+  /* text-align: center; */
+  margin: auto;
+}
+
+.tableHead {
+  color: white;
+  background-color: var(--color-primary-variant);
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  width: 150px;
+  text-align: left;
+  padding: 5px;
+}
+
+#data {
+  background-color: white;
+}
+
+.editClm {
+  width: 20px;
+  background-color: black;
+}
+.delClm {
+  width: 8px;
+  background-color: var(--color-main);
+}
+
+.arrows {
+  margin-top: 7rem;
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* @media screen and (max-width: 1024px) {
+    .all {
+      grid-template-columns: 40% 54%;
+      gap: 6%;
+    }
+  } */
