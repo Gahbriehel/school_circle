@@ -82,7 +82,7 @@ def delete_student(id):
             return response_with(resp.SERVER_ERROR_404, message="Student not found")
         db.session.delete(student)
         db.session.commit()
-        return response_with(resp.SUCCESS_204, messsage="Student successfully deleted")
+        return response_with(resp.SUCCESS_204, message="Student successfully deleted")
     except Exception as e:
         print(e)
         return response_with(resp.SERVER_ERROR_500, message=str(e))
