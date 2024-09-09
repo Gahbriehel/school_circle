@@ -49,6 +49,7 @@ def create_student():
         student_schema = StudentSchema()
         student = student_schema.load(data)
         result = student_schema.dump(student.create())
+        print("Student created successfully")
         print("received data:", data)
         return response_with(resp.SUCCESS_201, value={"student": result})
     except Exception as e:
@@ -145,7 +146,8 @@ def update_student(id):
         db.session.add(get_student)
         db.session.commit()
         student = student_schema.dump(get_student)
-        return response_with(resp.SUCCESS_204, value={"student": student})
+        print("Student updated successfully")
+        return response_with(resp.SUCCESS_200, value={"student": student})
     except Exception as e:
         print(e)
         return response_with(resp.INVALID_INPUT_422)
@@ -175,8 +177,11 @@ def delete_student(id):
         if not student:
             return response_with(resp.SERVER_ERROR_404, message="Student not found")
         db.session.delete(student)
+        print("Student deleted successfully")
+        student_schema = StudentSchema()
+        student = student_schema.dump(student)
         db.session.commit()
-        return response_with(resp.SUCCESS_204, message="Student successfully deleted")
+        return response_with(resp.SUCCESS_200, value={"student": student})
     except Exception as e:
         print(e)
         return response_with(resp.SERVER_ERROR_500, message=str(e))

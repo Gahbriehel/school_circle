@@ -32,6 +32,7 @@ def create_teacher():
         teacher_schema = TeacherSchema()
         teacher = teacher_schema.load(data)
         result = teacher_schema.dump(teacher.create())
+        print("Teacher created successfully")
         print("received data:", data)
         return response_with(resp.SUCCESS_201, value={"teacher": result})
     except Exception as e:
@@ -119,7 +120,7 @@ def delete_teacher(id):
         print(f"Teacher with id {get_teacher} deleted successfully")
         teacher_schema = TeacherSchema()
         teacher = teacher_schema.dump(get_teacher)
-        return response_with(resp.SUCCESS_204, value={"teacher": teacher})
+        return response_with(resp.SUCCESS_200, value={"teacher": teacher})
     except Exception as e:
         return response_with(resp.SERVER_ERROR_500)
 
@@ -158,7 +159,8 @@ def update_teacher(id):
         get_teacher = teacher_schema.load(data)
         db.session.commit()
         teacher = teacher_schema.dump(get_teacher)
-        return response_with(resp.SUCCESS_204, value={"teacher": teacher})
+        print("Teacher updated successfully")
+        return response_with(resp.SUCCESS_200, value={"teacher": teacher})
     except Exception as e:
         print(e)
         return response_with(resp.INVALID_INPUT_422)
