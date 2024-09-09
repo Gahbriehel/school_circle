@@ -1,4 +1,7 @@
-let welcomeText = document.getElementById("welcome");
-let profileName = "Morenike";
-profileName = profileName.toUpperCase();
-welcomeText.innerHTML = `WELCOME ${profileName}!`;
+document.addEventListener("DOMContentLoaded", function () {
+  const profileName = localStorage.getItem("profileName");
+  if (profileName) {
+    const welcomeText = document.getElementById("welcome");
+    welcomeText.innerHTML = `WELCOME ${profileName}!`;
+  }
+});
