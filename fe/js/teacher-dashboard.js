@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const profileName = localStorage.getItem("profileName");
-  if (profileName) {
     const welcomeText = document.getElementById("welcome");
-    welcomeText.innerHTML = `WELCOME ${profileName}!`;
-  }
-});
+    const studentName = localStorage.getItem("studentName");
+  
+    if (welcomeText) {
+      if (studentName) {
+        welcomeText.innerHTML = `WELCOME ${studentName.toUpperCase()}`;
+      } else {
+        welcomeText.innerHTML = `WELCOME 'unknown'`;
+      }
+    }
+  });
+  
