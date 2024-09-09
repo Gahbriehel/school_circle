@@ -11,6 +11,7 @@ from api.models.schemas import TeacherSchema
 teacher_routes = Blueprint("teacher_routes", __name__)
 
 
+
 @teacher_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_teacher():
 
@@ -26,6 +27,18 @@ def create_teacher():
         print(e)
         return response_with(resp.INVALID_INPUT_422)
 
+
+@teacher_routes.route("/<id>", methods=["GET"], strict_slashes=False)
+def get_teacher_by_id(id):
+    try:
+        fetched = Teacher.query.get(id)
+        teacher_schema = TeacherSchema(many=False)
+        teacher = teacher_schema.dump(fetched)
+        print ("teacher fetched by id successfully")
+        return response_with(resp.SUCCESS_200, value={"teacher": teacher})
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))
 
 @teacher_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_teachers():
@@ -47,7 +60,12 @@ def delete_teacher(id):
         get_teacher = Teacher.query.get(id)
         db.session.delete(get_teacher)
         db.session.commit()
-        return response_with(resp.SUCCESS_204)
+        
+        
+        print (f"Teacher with id {get_teacher} deleted successfully")
+        teacher_schema = TeacherSchema()
+        teacher = teacher_schema.dump(get_teacher)
+        return response_with(resp.SUCCESS_204, value={"teacher": teacher})
     except Exception as e:
         return response_with(resp.SERVER_ERROR_500)
 
@@ -63,7 +81,7 @@ def update_teacher(id):
             return response_with(resp.SERVER_ERROR_404, message="Teacher not found")
 
         if data:
-            data["updated_at"] = datetime.utcnow()
+            data["updated_at"] = str(datetime.utcnow())
 
         teacher_schema = TeacherSchema()
         get_teacher = teacher_schema.load(data)

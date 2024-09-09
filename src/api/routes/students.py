@@ -22,6 +22,18 @@ def create_student():
         print(e)
         return response_with(resp.INVALID_INPUT_422)
 
+@student_routes.route("/<id>", methods=["GET"], strict_slashes=False)
+def get_student_by_id(id):
+    try:
+        fetched = Student.query.get(id)
+        Student_schema = StudentSchema(many=False)
+        student = Student_schema.dump(fetched)
+        print ("Student fetched by id successfully")
+        return response_with(resp.SUCCESS_200, value={"Student": student})
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))
+
 
 @student_routes.route("/", methods=["GET"], strict_slashes=False)
 def get_all_students():
