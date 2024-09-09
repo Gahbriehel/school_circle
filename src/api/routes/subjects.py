@@ -11,6 +11,7 @@ subject_routes = Blueprint("subject_routes", __name__)
 
 @subject_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_subject():
+    
 
     try:
         data = request.get_json()
