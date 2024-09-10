@@ -152,11 +152,14 @@ def update_teacher(id):
         if not get_teacher:
             return response_with(resp.SERVER_ERROR_404, message="Teacher not found")
 
+
         if data:
             data["updated_at"] = str(datetime.utcnow())
+            if data.get("class_id"):
+                get_teacher.class_id = data["class_id"]
 
         teacher_schema = TeacherSchema()
-        get_teacher = teacher_schema.load(data)
+        db.session.add(get_teacher)
         db.session.commit()
         teacher = teacher_schema.dump(get_teacher)
         print("Teacher updated successfully")

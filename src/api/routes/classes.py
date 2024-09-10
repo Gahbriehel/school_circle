@@ -62,3 +62,17 @@ def delete_class(id):
         return response_with(resp.SUCCESS_204)
     except Exception as e:
         return response_with(resp.SERVER_ERROR_500)
+
+
+@class_routes.route("/<id>", methods=["GET"], strict_slashes=False)
+def get_class_by_id(id):
+
+    try:
+        fetched = ClassName.query.get(id)
+        class_schema = ClassSchema(many=False)
+        class_data = class_schema.dump(fetched)
+        print("Class fetched by id successfully")
+        return response_with(resp.SUCCESS_200, value={"Class": class_data})
+    except Exception as e:
+        print(e)
+        return response_with(resp.SERVER_ERROR_500, message=str(e))

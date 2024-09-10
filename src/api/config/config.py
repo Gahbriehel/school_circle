@@ -15,7 +15,7 @@ class Config(object):
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = (
-        f"mysql+pymysql://gabe:{passwd}@localhost:3306/school_circle"
+        f"mysql+pymysql://root:{passwd}@localhost:3306/school_circle"
     )
     # SECRET_KEY = quote_plus(os.getenv("SCH_CIR_JWT_KEY"))
 
@@ -23,7 +23,7 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = (
-        f"mysql+pymysql://gabe:{passwd}@localhost:3306/school_circle"
+        f"mysql+pymysql://root:{passwd}@localhost:3306/school_circle"
     )
     SQLALCHEMY_ECHO = False
     # SECRET_KEY = quote_plus(os.getenv("SCH_CIR_JWT_KEY"))
@@ -32,7 +32,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = (
-        f"mysql+pymysql://gabe:{passwd}@localhost:3306/school_circle"
+        f"mysql+pymysql://root:{passwd}@localhost:3306/school_circle"
     )
     SQLALCHEMY_ECHO = False
     # SECRET_KEY = quote_plus(os.getenv("SCH_CIR_JWT_KEY"))

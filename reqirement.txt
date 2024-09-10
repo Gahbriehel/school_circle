@@ -7,3 +7,4 @@ marshmallow-sqlalchemy==1.1.0
 marshmallow==3.22.0
 Flask-Migrate==4.0.7
 flask-cors==5.0.0
+cryptography==43.0.1

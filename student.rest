@@ -1,0 +1,83 @@
+GET http://127.0.0.1:5000/api/students
+
+
+### POST 
+
+POST http://127.0.0.1:5000/api/students
+Content-Type: application/json
+
+
+{
+    "first_name": "Dapo",
+    "last_name": "Sunday",
+    "email": "newemail@yahoo.com",
+    "username": "Dapsonco92",
+    "password": "Dapsonco982",
+    "confirm_password": "Dapsonco982"
+}
+
+
+### GET
+GET http://127.0.0.1:5000/api/classes/79b615ad-3305-4fd2-bdc8-7a61986b9ce0
+
+
+### POST Class
+POST http://127.0.0.1:5000/api/classes
+Content-Type: application/json
+
+
+{
+    "class_name": "Jss 1"
+}
+
+### POST Class
+POST http://127.0.0.1:5000/api/classes
+Content-Type: application/json
+
+
+{
+    "class_name": "Jss 2"
+}
+
+### POST Class
+POST http://127.0.0.1:5000/api/classes
+Content-Type: application/json
+
+
+{
+    "class_name": "Jss 3"
+}
+
+
+### PUT Student 79b615ad-3305-4fd2-bdc8-7a61986b9ce0 st_ 
+PUT http://127.0.0.1:5000/api/students/095eaadd-4aa2-4efe-8d43-72b860c71995
+Content-Type: application/json
+
+
+{
+    "class_id": "79b615ad-3305-4fd2-bdc8-7a61986b9ce0"
+}
+
+
+### POST Teacher
+POST http://127.0.0.1:5000/api/teachers
+Content-Type: application/json
+
+
+{
+    "first_name": "Femi",
+    "last_name": "Useless",
+    "email": "femouseless@yahoo.com",
+    "username": "femuseless",
+    "password": "femcouselessco982",
+    "confirm_password": "femcouselessco982"
+}
+
+### PUT Teacher th_ f9af9976-d524-4dcc-9822-64814ab2c82a
+PUT http://127.0.0.1:5000/api/teachers/f9af9976-d524-4dcc-9822-64814ab2c82a
+Content-Type: application/json
+
+
+{
+    "class_id": "79b615ad-3305-4fd2-bdc8-7a61986b9ce0"
+}
