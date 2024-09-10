@@ -9,4 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
       welcomeText.innerHTML = `WELCOME 'unknown'`;
     }
   }
+  const viewStudents = document.getElementById("view-students-btn");
+  viewStudents.addEventListener("click", function () {
+    alert("You are being redirected to view your students");
+    window.location.href = "./students.html";
+  });
 });

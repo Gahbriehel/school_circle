@@ -30,16 +30,6 @@
   text-align: center;
 }
 
-.student-form,
-#items {
-  margin-left: 2rem;
-}
-
-#name #weight #price {
-  width: 20rem;
-  height: 2rem;
-}
-
 #submit {
   background-color: black;
   color: white;
@@ -49,38 +39,36 @@
 }
 
 .student-table {
-  margin-top: 4rem;
+  margin: 4rem 0;
+  font-size: 18px;
 }
 
 .table {
-  border-radius: 8px;
-  /* text-align: center; */
   margin: auto;
 }
 
 .tableHead {
   color: white;
   background-color: var(--color-primary-variant);
-  border-collapse: collapse;
+  border: 1px dotted var(--color-secondary-variant);
   text-align: left;
+  width: 17rem;
+  height: 4rem;
 }
 
 th {
-  width: 150px;
+  width: 250px;
   text-align: left;
   padding: 5px;
 }
 
-#data {
-  background-color: white;
+td {
+  padding-top: 1rem;
+  border: 1px dotted var(--color-secondary-variant);
 }
 
-.editClm {
-  width: 20px;
-  background-color: black;
-}
 .delClm {
-  width: 8px;
+  width: 35px;
   background-color: var(--color-main);
 }
 
@@ -97,3 +85,8 @@ th {
       gap: 6%;
     }
   } */
+
+.student-form,
+#items {
+  margin-left: 2rem;
+}

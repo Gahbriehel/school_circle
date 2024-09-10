@@ -12,22 +12,14 @@ fetch(url)
       let student = ""; // Initialize the table rows string
       data.students.forEach((students) => {
         // Create table row for each student
-        student += "<tr>";
-        student += "<td>" + students.first_name + "</td>";
-        student += "<td>" + students.last_name + "</td>";
-        student += "<td>" + students.class_d + "</td>";
-        student += "<td>" + students.gender + "</td>";
-        student +=
-          "<td>" +
-          students.street +
-          ", " +
-          students.city +
-          ", " +
-          students.country +
-          "</td>";
-        // Edit and Delete buttons
-        student += `<td> <a href="#" data-id="${students.id}" class="fa-regular fa-pen-to-square" style="color: grey;"></a>  </td>`;
-        student += `<td> <a href="#" data-id="${students.id}" class="deleteBtn fa-solid fa-trash" style="color: grey;"></a>  </td>`;
+        student += `<tr class="trow">`;
+        student += `<td class="table-row">${students.first_name}</td>`;
+        student += `<td class="table-row">${students.last_name}</td>`;
+        student += `<td class="table-row">${students.class_d}</td>`;
+        student += `<td class="table-row">${students.gender}</td>`;
+        student += `<td class="table-row">${students.street}, ${students.city}, ${students.country}</td>`;
+        student += `<td> <a href="#" student-id="${students.id}" class="fa-regular fa-pen-to-square" style="color: grey;"></a>  </td>`;
+        student += `<td> <a href="#" student-id="${students.id}" class="deleteBtn fa-solid fa-trash" style="color: grey;"></a>  </td>`;
         student += "</tr>";
       });
       // Insert the generated rows into the table body
