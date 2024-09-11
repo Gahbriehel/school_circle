@@ -6,7 +6,7 @@
     <title>School Circle</title>
     <link rel="shortcut icon" href="images/SC.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/sign-up.css" />
+    <link rel="stylesheet" href="./css/pre-signin.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
@@ -30,7 +30,7 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="./about.html">ABOUT US</a></li>
-          <li><a href="./pre-signin.html">SIGN IN</a></li>
+          <li><a href="./sign-in.html">SIGN IN</a></li>
           <li><a href="./review.html">REVIEW</a></li>
           <li><a href="./contact-us.html">CONTACT US</a></li>
         </ul>
@@ -51,20 +51,28 @@
     </div>
 
     <!-- body -->
+    <div class="signin-header">
+      <h1>Sign in as:</h1>
+    </div>
 
     <section class="buttons">
       <div class="student">
-        <button id="student-btn" name="Student" class="select-btn">
+        <button id="student-btnn" name="Student" class="selection-btn">
           Student
         </button>
       </div>
       <div class="teacher">
-        <button id="teacher-btn" name="Teacher" class="select-btn">
+        <button id="teacher-btnn" name="Teacher" class="selection-btn">
           Teacher
         </button>
       </div>
+      <div class="admin">
+        <button id="admin-btnn" name="Admin" class="selection-btn">
+          Admin
+        </button>
+      </div>
       <div class="continue">
-        <button id="continue-btn" disabled>Continue</button>
+        <button id="continue-btnn" disabled>Continue</button>
       </div>
     </section>
 
@@ -103,5 +111,6 @@
       </div>
     </footer>
     <script src="./js/main.js"></script>
+    <script src="./js/pre-signin.js"></script>
   </body>
 </html>
