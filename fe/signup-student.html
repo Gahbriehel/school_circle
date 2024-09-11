@@ -102,11 +102,29 @@
             <option value="female">Female</option>
           </select>
         </div>
-        <!-- <div class="form-group">
-          <input type="text" name="class" placeholder="Class" />
-        </div> -->
+
         <div class="form-group">
           <input type="date" name="dob" />
+        </div>
+        <!-- <div class="form-group">
+          <select name="class_id" required>
+            <option value="" disabled selected>Class registering to</option>
+            <option value="jss1">Junior Secondary School 1</option>
+            <option value="jss2">Junior Secondary School 2</option>
+            <option value="jss3">Junior Secondary School 3</option>
+            <option value="sss1">Senior Secondary School 1</option>
+            <option value="sss2">Senior Secondary School 2</option>
+            <option value="sss3">Senior Secondary School 3</option>
+          </select>
+        </div> -->
+        <div class="form-group">
+          <input
+            type="text"
+            id="state"
+            name="state"
+            placeholder="State of origin:"
+            required
+          />
         </div>
         <div class="form-group">
           <input
@@ -135,9 +153,14 @@
             required
           />
         </div>
-        <!-- <div class="form-group">
-          <input type="text" id="region" name="region" placeholder="Region:" />
-        </div> -->
+        <div class="form-group">
+          <input
+            type="text"
+            name="phone_number"
+            placeholder="Parent/Guardian phone:"
+            required
+          />
+        </div>
         <div class="form-group">
           <input
             type="text"
