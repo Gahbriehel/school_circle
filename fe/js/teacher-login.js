@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => {
         if (response.status == 200) {
-          console.log(response);
           return response.json();
         } else if (response.status == 401) {
           throw new Error("Invalid credentials");
@@ -30,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then((userData) => {
         localStorage.setItem("teacherName", userData.Teacher.first_name);
-        console.log(userData);
         window.location.href = "./teacher-dashboard.html";
       })
       .catch((error) => {
