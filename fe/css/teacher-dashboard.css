@@ -76,7 +76,8 @@
 #check-classes-btn,
 #announcement-btn,
 #newsletter-btn,
-#view-students-btn {
+#view-students-btn
+{
   width: 26rem;
   height: 8rem;
   border-radius: 15px;

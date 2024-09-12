@@ -73,10 +73,11 @@
 }
 
 #schedule-btn,
-#check-classes-btn,
+#view-classes-btn,
 #announcement-btn,
 #newsletter-btn,
-#view-students-btn {
+#view-students-btn,
+#view-teachers-btn {
   width: 26rem;
   height: 8rem;
   border-radius: 15px;
@@ -89,10 +90,11 @@
 }
 
 #schedule-btn:hover,
-#check-classes-btn:hover,
+#view-classes-btn:hover,
 #announcement-btn:hover,
 #newsletter-btn:hover,
-#view-students-btn:hover {
+#view-students-btn:hover,
+#view-teachers-btn:hover {
   background: var(--color-primary-variant);
   color: var(--color-white);
   transition: var(--transition);
