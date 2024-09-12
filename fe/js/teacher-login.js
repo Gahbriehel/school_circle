@@ -1,7 +1,7 @@
 const loginApiUrl = "http://localhost:5000/api/teachers/login";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const loginForm = document.getElementById("login-form");
+  const loginForm = document.getElementById("teacher-login-form");
   const loginError = document.getElementById("login-error");
 
   loginForm.addEventListener("submit", function (e) {
@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .then((userData) => {
-        localStorage.setItem("studentName", userData.teacher.first_name);
+        localStorage.setItem("teacherName", userData.Teacher.first_name);
+        console.log(userData);
         window.location.href = "./teacher-dashboard.html";
       })
       .catch((error) => {
