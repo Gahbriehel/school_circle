@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirm_password");
   const fname = document.getElementById("first_name");
+  const classId = document.getElementById("class_id")
 
   form.addEventListener("submit", function (event) {
     if (password.value !== confirmPassword.value) {
@@ -29,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.status === 200 || response.status === 201) {
           let profileName = fname.value;
           localStorage.setItem("studentName", profileName);
+          let profileClass = classId.value
+          localStorage.setItem("studentClass", profileClass)
           window.location.href = "./student-dashboard.html";
         } else {
           alert("Oops! There was a problem submitting the form");
