@@ -13,6 +13,34 @@ admin_routes = Blueprint("admin_routes", __name__)
 
 # TODO always update the updated_at key for any update to models made (PUT)
 
+@admin_routes.route("/login", methods=["POST"], strict_slashes=False)
+def login():
+    """ """
+    try:
+
+        data = request.get_json()
+        get_admin = Admin.find_by_email(data["email"])
+
+        if not get_admin and not data:
+            return response_with(
+                resp.SERVER_ERROR_404, value={"message", "user not found"}
+            )
+        else:
+            hash_verify = Admin.verify_hash(data["password"], get_admin.password)
+
+            if not hash_verify:
+                return response_with(
+                    resp.UNAUTHORIZED_403, value={"message": "wrong password"}
+                )
+        admin_schema = AdminSchema()
+        admin = admin_schema.dump(get_admin)
+        return response_with(resp.SUCCESS_200, value={"admin": admin})
+    except Exception as e:
+        print(e)
+        return response_with(resp.INVALID_INPUT_422)
+
+
+
 
 @admin_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_admin():

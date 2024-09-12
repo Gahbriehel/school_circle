@@ -47,6 +47,15 @@ class Admin(db.Model):
         """Find admin by username"""
         return cls.query.filter_by(username=username).first()
 
+
+    @classmethod
+    def find_by_email(cls, email):
+        """
+        Finds a student by their email
+        """
+        return cls.query.filter_by(email=email).first()
+
+
     @staticmethod
     def generate_hash(password):
         """Hash the given password using pbkdf2_sha256"""
