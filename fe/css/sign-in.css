@@ -27,6 +27,16 @@
   margin: auto;
 }
 
+.form-container h1 {
+  color: var(--color-secondary-variant);
+  text-align: center;
+  height: fit-content;
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
 .form-group input {
   width: 100%;
   padding: 15px;

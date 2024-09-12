@@ -1,4 +1,4 @@
-const loginApiUrl = "http://localhost:5000/api/students/login";
+const loginApiUrl = "http://localhost:5000/api/teachers/login";
 
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("login-form");
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .then((userData) => {
-        localStorage.setItem("studentName", userData.student.first_name);
-        window.location.href = "./student-dashboard.html";
+        localStorage.setItem("studentName", userData.teacher.first_name);
+        window.location.href = "./teacher-dashboard.html";
       })
       .catch((error) => {
         console.log(error);
