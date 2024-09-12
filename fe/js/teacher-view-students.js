@@ -29,8 +29,6 @@ fetch(url)
         student += `<td class="table-row">${students.class_d}</td>`;
         student += `<td class="table-row">${students.gender}</td>`;
         student += `<td class="table-row">${students.street}, ${students.city}, ${students.country}</td>`;
-        student += `<td> <a href="#" student-id="${students.id}" class="fa-regular fa-pen-to-square" style="color: grey;"></a>  </td>`;
-        student += `<td> <a href="#" student-id="${students.id}" class="deleteBtn fa-solid fa-trash" style="color: grey;"></a>  </td>`;
         student += "</tr>";
       });
       // Insert the generated rows into the table body

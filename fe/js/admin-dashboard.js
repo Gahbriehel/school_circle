@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeText = document.getElementById("welcome");
   const adminName = localStorage.getItem("adminName");
+
   // const adminClass = document.getElementById("class");
 
   if (welcomeText) {
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const viewStudents = document.getElementById("view-students-btn");
   viewStudents.addEventListener("click", function () {
-    alert("You are being redirected to view your students");
-    window.location.href = "./students.html";
+    // alert("You are being redirected to view your students");
+    window.location.href = "./admin-view-students.html";
   });
 });
