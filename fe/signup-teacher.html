@@ -48,8 +48,6 @@
         related, where teachers and students <br />can access courses and
         results with ease.
       </p>
-      <input type="button" id="tour-btn" value="Take a tour" />
-      <input type="button" id="get-started-btn" value="Get started" />
     </div>
 
     <!-- Main -->
@@ -108,16 +106,25 @@
         <div class="form-group">
           <select name="relationship_status" required>
             <option value="" disabled selected>Relationship Status</option>
-            <option value="male">Single</option>
-            <option value="female">Married</option>
-            <option value="female">Divorced</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
           </select>
         </div>
+
         <div class="form-group">
           <input
             type="text"
             name="nationality"
             placeholder="Nationality:"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="state"
+            placeholder="State of origin:"
             required
           />
         </div>
@@ -148,9 +155,7 @@
         <div class="form-group">
           <input type="text" name="city" placeholder="City:" required />
         </div>
-        <!-- <div class="form-group">
-          <input type="text" name="region" placeholder="Region:" required />
-        </div> -->
+
         <div class="form-group">
           <input type="text" name="country" placeholder="Country:" required />
         </div>

@@ -18,8 +18,15 @@
   --transition: all 400ms ease;
 }
 
+.profile-all {
+  display: flex;
+  color: var(--color-main);
+  margin: 8rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .profile {
-  margin: 8rem 0 8rem 8rem;
   display: flex;
   color: var(--color-main);
   align-items: center;
@@ -27,6 +34,12 @@
 
 #welcome {
   margin-left: 1rem;
+  font-size: 30px;
+  line-height: 45px;
+}
+
+#class {
+  margin-right: 2rem;
   font-size: 30px;
   line-height: 45px;
 }

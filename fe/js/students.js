@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const welcomeText = document.getElementById("welcome");
+  const teacherName = localStorage.getItem("teacherName");
+  const teacherClass = document.getElementById("class");
+
+  if (teacherName) {
+    welcomeText.innerHTML = `${teacherName.toUpperCase()}`;
+    teacherClass.innerHTML = `CLASS: `;
+  }
+});
+
 const itemForm = document.getElementById("itemsForm");
 const url = "http://localhost:5000/api/students";
 
