@@ -11,7 +11,7 @@ from api.models.schemas import TeacherSchema
 teacher_routes = Blueprint("teacher_routes", __name__)
 
 
-@teacher_routes.route("/login", methods=["GET"], strict_slashes=False)
+@teacher_routes.route("/login", methods=["POST"], strict_slashes=False)
 def login():
     """ """
     try:
