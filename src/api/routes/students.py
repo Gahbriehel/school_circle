@@ -9,6 +9,33 @@ from api.utils.database import db
 student_routes = Blueprint("student_routes", __name__)
 
 
+@student_routes.route("/login", methods=["POST"], strict_slashes=False)
+def login():
+    """ """
+    try:
+
+        data = request.get_json()
+        get_student = Student.find_by_email(data["email"])
+
+        if not get_student and not data:
+            return response_with(
+                resp.SERVER_ERROR_404, value={"message", "user not found"}
+            )
+        else:
+            hash_verify = Student.verify_hash(data["password"], get_student.password)
+
+            if not hash_verify:
+                return response_with(
+                    resp.UNAUTHORIZED_403, value={"message": "wrong password"}
+                )
+        student_schema = StudentSchema()
+        student = student_schema.dump(get_student)
+        return response_with(resp.SUCCESS_200, value={"student": student})
+    except Exception as e:
+        print(e)
+        return response_with(resp.INVALID_INPUT_422)
+
+
 @student_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_student():
     """
@@ -76,6 +103,7 @@ def get_student_by_id(id):
 
     try:
         fetched = Student.query.get(id)
+        print(fetched)
         Student_schema = StudentSchema(many=False)
         student = Student_schema.dump(fetched)
         print("Student fetched by id successfully")

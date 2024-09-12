@@ -49,6 +49,10 @@ Content-Type: application/json
 }
 
 
+### 
+GET http://127.0.0.1:5000/api/students/095eaadd-4aa2-4efe-8d43-72b860c71995
+
+
 ### PUT Student 79b615ad-3305-4fd2-bdc8-7a61986b9ce0 st_ 
 PUT http://127.0.0.1:5000/api/students/095eaadd-4aa2-4efe-8d43-72b860c71995
 Content-Type: application/json
@@ -80,4 +84,22 @@ Content-Type: application/json
 
 {
     "class_id": "79b615ad-3305-4fd2-bdc8-7a61986b9ce0"
+}
+
+###
+GET http://127.0.0.1:5000/api/teachers/login
+Content-Type: application/json
+
+{
+    "email": "femouseless@yahoo.com",
+    "password": "femcouselessco982"
+}
+
+### 
+POST http://127.0.0.1:5000/api/students/login
+Content-Type: application/json
+
+{
+    "email": "newemail@yahoo.com",
+    "password": "Dapsonco982"
 }

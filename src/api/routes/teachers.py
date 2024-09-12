@@ -11,6 +11,33 @@ from api.models.schemas import TeacherSchema
 teacher_routes = Blueprint("teacher_routes", __name__)
 
 
+@teacher_routes.route("/login", methods=["GET"], strict_slashes=False)
+def login():
+    """ """
+    try:
+
+        data = request.get_json()
+        get_teacher = Teacher.find_by_email(data["email"])
+
+        if not get_teacher and not data:
+            return response_with(
+                resp.SERVER_ERROR_404, value={"message", "user not found"}
+            )
+        else:
+            hash_verify = Teacher.verify_hash(data["password"], get_teacher.password)
+
+            if not hash_verify:
+                return response_with(
+                    resp.UNAUTHORIZED_403, value={"message": "wrong password"}
+                )
+        teacher_schema = TeacherSchema()
+        teacher = teacher_schema.dump(get_teacher)
+        response_with(resp.SUCCESS_200, value={"Teacher": teacher})
+    except Exception as e:
+        print(e)
+        response_with(resp.INVALID_INPUT_422)
+
+
 @teacher_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_teacher():
     """
@@ -151,7 +178,6 @@ def update_teacher(id):
 
         if not get_teacher:
             return response_with(resp.SERVER_ERROR_404, message="Teacher not found")
-
 
         if data:
             data["updated_at"] = str(datetime.utcnow())

@@ -49,7 +49,15 @@ class Teacher(db.Model):
     schedules = db.relationship("Schedule", back_populates="teacher")
 
     def __init__(
-        self, first_name, last_name, email, username, password, confirm_password, class_id=None, **kwargs
+        self,
+        first_name,
+        last_name,
+        email,
+        username,
+        password,
+        confirm_password,
+        class_id=None,
+        **kwargs
     ):
         """
         Initializes a new Teacher instance
@@ -91,6 +99,13 @@ class Teacher(db.Model):
         Finds a Teacher by their username
         """
         return cls.query.filter_by(username=username).first()
+
+    @classmethod
+    def find_by_email(cls, email):
+        """
+        Finds a student by their email
+        """
+        return cls.query.filter_by(email=email).first()
 
     @staticmethod
     def generate_hash(password):
