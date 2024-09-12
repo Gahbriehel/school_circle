@@ -32,10 +32,10 @@ def login():
                 )
         teacher_schema = TeacherSchema()
         teacher = teacher_schema.dump(get_teacher)
-        response_with(resp.SUCCESS_200, value={"Teacher": teacher})
+        return response_with(resp.SUCCESS_200, value={"Teacher": teacher})
     except Exception as e:
         print(e)
-        response_with(resp.INVALID_INPUT_422)
+        return response_with(resp.INVALID_INPUT_422)
 
 
 @teacher_routes.route("/", methods=["POST"], strict_slashes=False)
