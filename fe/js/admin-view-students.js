@@ -1,4 +1,6 @@
 const students = document.querySelector("#data");
+const addStudent = document.querySelector("#studentForm");
+const url = "http://localhost:5000/api/students";
 
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeText = document.getElementById("welcome");
@@ -10,9 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // adminClass.innerHTML = `CLASS: `;
   }
 });
-
-const itemForm = document.getElementById("itemsForm");
-const url = "http://localhost:5000/api/students";
 
 // GET students
 fetch(url)
@@ -67,3 +66,37 @@ students.addEventListener("click", (e) => {
     window.alert("Student Deleted Successfully!\nRefresh Page");
   }
 });
+
+// POST student
+addStudent.addEventListener("submit", (button) => {
+  button.preventDefault();
+  if (
+    !first_name.value ||
+    !last_name.value ||
+    !email.value ||
+    !username.value ||
+    !password.value ||
+    !confirm_password.value
+  ) {
+    alert("Please fill all fields before submitting!");
+    return;
+  }
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      first_name: first_name.value,
+      last_name: last_name.value,
+      email: email.value,
+      username: username.value,
+      password: password.value,
+      confirm_password: confirm_password.value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+  // alert("Item Added Successfully. Refresh page");
+});
+document.getElementById("studentForm").onsubmit = function () {
+  location.reload(true);
+};
