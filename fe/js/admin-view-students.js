@@ -1,3 +1,5 @@
+const students = document.querySelector("#data");
+
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeText = document.getElementById("welcome");
   const adminName = localStorage.getItem("adminName");
@@ -12,17 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
 const itemForm = document.getElementById("itemsForm");
 const url = "http://localhost:5000/api/students";
 
-// Get request
+// GET students
 fetch(url)
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
     console.log(data.students);
-    console.log(data.students[0].first_name);
     if (data.students) {
-      let student = ""; // Initialize the table rows string
+      let student = "";
       data.students.forEach((students) => {
-        // Create table row for each student
         student += `<tr class="trow">`;
         student += `<td class="table-row">${students.first_name}</td>`;
         student += `<td class="table-row">${students.last_name}</td>`;
@@ -33,7 +33,6 @@ fetch(url)
         student += `<td> <a href="#" student-id="${students.id}" class="deleteBtn fa-solid fa-trash" style="color: grey;"></a>  </td>`;
         student += "</tr>";
       });
-      // Insert the generated rows into the table body
       document.getElementById("data").innerHTML = student;
       console.log("Data inserted into table.");
     } else {
@@ -43,3 +42,28 @@ fetch(url)
   .catch((error) => {
     console.error("Error fetching data:", error);
   });
+
+// DELETE student by id
+
+students.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("deleteBtn")) {
+    const studentId = e.target.getAttribute("student-id");
+
+    fetch(`${url}/${studentId}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log(`Student with id ${studentId} deleted successfully.`);
+        } else {
+          console.error(`Failed to delete Student with id ${studentId}.`);
+        }
+        console.log("Student Deleted Successfully! Refresh Page");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    window.alert("Student Deleted Successfully!\nRefresh Page");
+  }
+});
