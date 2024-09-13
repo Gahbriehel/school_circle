@@ -56,15 +56,21 @@
         </div>
         <div class="student-form">
             <h2 id="items">Add student</h2>
-            <form id="itemsForm">
-                <label for="name">Name</label> <br />
-                <input type="text" id="name" placeholder="Michael" /> <br /><br />
-                <label for="weight">Weight</label> <br />
-                <input type="text" placeholder="56 pounds" id="weight" />
+            <form id="studentForm">
+                <label for="name">First name</label> <br />
+                <input type="text" id="first_name" name="first_name" placeholder="John" required/> <br /><br />
+                <label for="last_name">Last name</label> <br />
+                <input type="text" placeholder="Doe" id="last_name" name="last_name"/>
                 <br /><br />
-                <label for="price">Price</label> <br />
-                <input type="text" placeholder="₦100,000" id="price" /><br /><br />
-                <input type="submit" id="submit" value="Submit" />
+                <label for="email">Email</label> <br />
+                <input type="text" placeholder="someone@example.com" id="email" name="email"/><br /><br />
+                <label for="username">Username</label> <br />
+                <input type="text" placeholder="JDoe123" id="username" name="username"/><br /><br />
+                <label for="password">Password</label> <br />
+                <input type="text" id="password" name="password"/><br /><br />
+                <label for="confirm_password">Confirm password</label> <br />
+                <input type="text" id="confirm_password" name="confirm_password"/><br /><br />
+                <input type="submit" id="submit" value="Submit" /><br /><br />
             </form>
         </div>
     </div>
