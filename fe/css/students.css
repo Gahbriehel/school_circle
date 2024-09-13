@@ -117,7 +117,39 @@ td {
     }
   } */
 
-.student-form,
+.student-form {
+  font-size: 21px;
+  color: var(--color-secondary-variant);
+  background-color: var(--color-main);
+  text-align: center;
+  border: 2px solid var(--color-tertiary-variant);
+  width: 40rem;
+  margin: auto;
+  padding-bottom: 5rem;
+}
 #items {
-  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.student-form input {
+  border: 2px solid var(--color-secondary-variant);
+  height: 2rem;
+  margin-left: 1rem;
+  width: 13rem;
+}
+
+.student-form label {
+  margin-left: 1rem;
+}
+
+#studentForm {
+  width: 80%;
+  height: 60%;
+  border: 2px solid var(--color-primary-variant);
+  text-align: left;
+}
+
+#submit:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-variant);
 }
