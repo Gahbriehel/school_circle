@@ -1,4 +1,5 @@
 const students = document.querySelector("#data");
+const editStudent = document.querySelector("#data");
 const addStudent = document.querySelector("#studentForm");
 const url = "http://localhost:5000/api/students";
 
@@ -28,7 +29,7 @@ fetch(url)
         student += `<td class="table-row">${students.class_d}</td>`;
         student += `<td class="table-row">${students.gender}</td>`;
         student += `<td class="table-row">${students.street}, ${students.city}, ${students.country}</td>`;
-        student += `<td> <a href="#" student-id="${students.id}" class="fa-regular fa-pen-to-square" style="color: grey;"></a>  </td>`;
+        student += `<td> <a href="#" student-id="${students.id}" class="editBtn fa-regular fa-pen-to-square" style="color: grey;"></a>  </td>`;
         student += `<td> <a href="#" student-id="${students.id}" class="deleteBtn fa-solid fa-trash" style="color: grey;"></a>  </td>`;
         student += "</tr>";
       });
@@ -95,8 +96,67 @@ addStudent.addEventListener("submit", (button) => {
   })
     .then((res) => res.json())
     .then((data) => console.log(data));
-  // alert("Item Added Successfully. Refresh page");
 });
 document.getElementById("studentForm").onsubmit = function () {
   location.reload(true);
 };
+
+const editingForm = document.getElementById("itemsForm");
+
+editStudent.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("editBtn")) {
+    const studentId = e.target.getAttribute("student-id");
+
+    fetch(`${url}/${studentId}`)
+      .then((res) => res.json())
+      .then((studentData) => {
+        console.log("Fetched student data:", studentData);
+        first_name.value = studentData.Student.first_name;
+        last_name.value = studentData.Student.last_name;
+        email.value = studentData.Student.email;
+        username.value = studentData.Student.username;
+      })
+      .catch((error) => {
+        console.error("Error fetching item data:", error);
+      });
+
+    if (editingForm) {
+      editingForm.classList.add("visible");
+    }
+
+    if (editingForm) {
+      editingForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const updatedData = {
+          first_name: first_name.value,
+          last_name: last_name.value,
+          email: email.value,
+          username: username.value,
+          password: password.value,
+          confirm_password: confirm_password.value,
+        };
+
+        fetch(`${url}/${studentId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+
+        if (editingForm) {
+          editingForm.classList.remove("visible");
+        }
+      });
+    }
+  }
+});

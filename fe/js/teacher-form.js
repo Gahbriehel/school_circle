@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirm_password");
   const fname = document.getElementById("fname");
+  // const classId = document.getElementById("class_id");
 
   form.addEventListener("submit", function (event) {
     if (password.value !== confirmPassword.value) {
@@ -29,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.status === 200 || response.status === 201) {
           let teacherProfileName = fname.value;
           localStorage.setItem("teacherName", teacherProfileName);
+          // let teacherClass = classId.value;
+          // localStorage.setItem("profileClass", teacherClass);
           window.location.href = "./teacher-dashboard.html";
         } else {
           alert("Oops! There was a problem submitting the form");

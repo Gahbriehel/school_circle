@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   continueButton.addEventListener("click", function () {
     if (selectedOption == "student-btnn") {
-      alert(`You are signing in as a ${selectedTag}`);
+      // alert(`You are signing in as a ${selectedTag}`);
       window.location.href = "./student-sign-in.html";
     } else if (selectedOption == "teacher-btnn") {
-      alert(`You are signing in as a ${selectedTag}`);
+      // alert(`You are signing in as a ${selectedTag}`);
       window.location.href = "./teacher-sign-in.html";
     } else {
-      alert(`You are signing in as an ${selectedTag}`);
+      // alert(`You are signing in as an ${selectedTag}`);
       window.location.href = "./admin-sign-in.html";
     }
   });

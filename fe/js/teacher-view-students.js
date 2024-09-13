@@ -2,10 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const welcomeText = document.getElementById("welcome");
   const teacherName = localStorage.getItem("teacherName");
   const teacherClass = document.getElementById("class");
+  const teacherProfileClass = localStorage.getItem("profileClass");
 
   if (teacherName) {
     welcomeText.innerHTML = `${teacherName.toUpperCase()}`;
-    teacherClass.innerHTML = `CLASS: `;
+    teacherClass.innerHTML = `CLASS: ${teacherProfileClass}`;
   }
 });
 

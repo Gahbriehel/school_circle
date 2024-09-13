@@ -149,10 +149,6 @@ def update_student(id):
     Parameters:
     id (str): The unique identifier of the student to be updated.
 
-    Request Body (JSON):
-    {
-        "class_id": "optional, the ID of the class to which the student belongs"
-    }
 
     Returns:
     Response: A JSON response containing the updated student data and a success status code.
