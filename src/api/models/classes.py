@@ -45,3 +45,11 @@ class ClassName(db.Model):
         db.session.add(self)
         db.session.commit()
         return self
+
+    @classmethod
+    def get_all_students(cls, id):
+
+        get_class = cls.query.get_id(id)
+        students = get_class.students
+
+        return students

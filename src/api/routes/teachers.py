@@ -6,6 +6,7 @@ from api.utils import responses as resp
 from api.models.teachers import Teacher
 from api.utils.database import db
 from api.models.schemas import TeacherSchema
+from api.models.classes import ClassName
 
 
 teacher_routes = Blueprint("teacher_routes", __name__)
@@ -193,3 +194,23 @@ def update_teacher(id):
     except Exception as e:
         print(e)
         return response_with(resp.INVALID_INPUT_422)
+
+
+@teacher_routes.route("/<id>/students", methods=["GET"], strict_slashes=False)
+def update_teacher(id):
+    """Get all student related to the teacher"""
+
+    try:
+        get_teacher = Teacher.query.get(id)
+
+        if not get_teacher:
+            return response_with(resp.SERVER_ERROR_404, message="Teacher not found")
+
+        students = get_teacher.get_all_students(get_teacher.class_id)
+        if not students:
+            raise Exception
+        print("Student gotten successfuly")
+        return response_with(resp.SUCCESS_200, value={"students": students})
+    except Exception as e:
+        print(e)
+        return response_with(resp.INVALID_INPUT_422, value={"error": "no student"})
