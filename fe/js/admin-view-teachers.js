@@ -39,6 +39,8 @@ fetch(url)
     console.log("Error fetching data");
   });
 
+//   DELETE teacher
+
 teachers.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.classList.contains("deleteBtn")) {
@@ -60,3 +62,36 @@ teachers.addEventListener("click", (e) => {
     window.alert("Teacher Deleted Successfully!\nRefresh Page");
   }
 });
+
+// POST teacher
+addTeacher.addEventListener("submit", (button) => {
+  button.preventDefault();
+  if (
+    !first_name.value ||
+    !last_name.value ||
+    !email.value ||
+    !username.value ||
+    !password.value ||
+    !confirm_password.value
+  ) {
+    alert("Please fill all fields before submitting!");
+    return;
+  }
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      first_name: first_name.value,
+      last_name: last_name.value,
+      email: email.value,
+      username: username.value,
+      password: password.value,
+      confirm_password: confirm_password.value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+});
+document.getElementById("teacherForm").onsubmit = function () {
+  location.reload(true);
+};
