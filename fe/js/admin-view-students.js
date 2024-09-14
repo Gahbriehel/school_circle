@@ -104,11 +104,11 @@ addStudent.addEventListener("submit", (button) => {
     }),
   })
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      console.log(data);
+      window.location.reload(true);
+    });
 });
-document.getElementById("studentForm").onsubmit = function () {
-  location.reload(true);
-};
 
 const editingForm = document.getElementById("itemsForm");
 
@@ -158,6 +158,7 @@ editStudent.addEventListener("click", (e) => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            window.location.reload(true);
           })
           .catch((error) => {
             console.error("Error:", error);
