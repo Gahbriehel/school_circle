@@ -1,0 +1,155 @@
+:root {
+  --color-main: #016064;
+  --color-primary-variant: #153436;
+  --color-secondary: #ff7b02;
+  --color-secondary-variant: #e5a55d;
+  --color-tertiary-variant: #7b4e19;
+  --color-bg-1: #000e17;
+  --color-bg-2: #001e2d;
+  --color-bg-3: #012734;
+  --color-bg-4: #003347;
+  --color-light: #85a2b2;
+  --color-white: hsl(0, 0%, 90%);
+  --color-bg-5: #32393b;
+
+  --container-width-lg: 88%;
+  --container-width-md: 92%;
+
+  --transition: all 400ms ease;
+}
+.profile-all {
+  display: flex;
+  color: var(--color-main);
+  margin: 8rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  color: var(--color-main);
+  align-items: center;
+}
+
+#welcome {
+  margin-left: 1rem;
+  font-size: 30px;
+  line-height: 45px;
+}
+
+#class {
+  margin-right: 2rem;
+  font-size: 30px;
+  line-height: 45px;
+}
+
+.pfp {
+  border: 1px solid var(--color-main);
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.all {
+  margin-top: 10rem;
+  color: var(--color-main);
+}
+
+.greeting {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--color-main);
+  text-align: center;
+}
+
+#submit {
+  background-color: black;
+  color: white;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 4px;
+}
+
+.teacher-table {
+  margin: 4rem 0;
+  font-size: 18px;
+}
+
+.table {
+  margin: auto;
+}
+
+.tableHead {
+  color: white;
+  background-color: var(--color-primary-variant);
+  border: 1px dotted var(--color-secondary-variant);
+  text-align: left;
+  width: 17rem;
+  height: 4rem;
+}
+
+th {
+  width: 250px;
+  text-align: left;
+  padding: 5px;
+}
+
+td {
+  padding-top: 1rem;
+  border: 1px dotted var(--color-secondary-variant);
+}
+
+.delClm {
+  width: 35px;
+  background-color: var(--color-main);
+}
+
+.arrows {
+  margin-top: 7rem;
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* @media screen and (max-width: 1024px) {
+      .all {
+        grid-template-columns: 40% 54%;
+        gap: 6%;
+      }
+    } */
+
+.teacher-form {
+  font-size: 21px;
+  color: var(--color-secondary-variant);
+  background-color: var(--color-main);
+  text-align: center;
+  border: 2px solid var(--color-tertiary-variant);
+  width: 40rem;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+#items {
+  margin-bottom: 1rem;
+}
+
+.teacher-form input {
+  border: 2px solid var(--color-secondary-variant);
+  height: 2rem;
+  margin-left: 1rem;
+  width: 13rem;
+}
+
+.teacher-form label {
+  margin-left: 1rem;
+}
+
+#teacherForm {
+  width: 80%;
+  height: 60%;
+  border: 2px solid var(--color-primary-variant);
+  text-align: left;
+}
+
+#submit:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-variant);
+}

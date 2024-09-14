@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const viewStudents = document.getElementById("view-students-btn");
   viewStudents.addEventListener("click", function () {
-    // alert("You are being redirected to view your students");
     window.location.href = "./admin-view-students.html";
+  });
+
+  const viewTeachers = document.getElementById("view-teachers-btn");
+  viewTeachers.addEventListener("click", function () {
+    window.location.href = "./admin-view-teachers.html";
   });
 });

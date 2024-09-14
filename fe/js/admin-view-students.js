@@ -22,12 +22,21 @@ fetch(url)
     console.log(data.students);
     if (data.students) {
       let student = "";
+
       data.students.forEach((students) => {
         student += `<tr class="trow">`;
         student += `<td class="table-row">${students.first_name}</td>`;
         student += `<td class="table-row">${students.last_name}</td>`;
-        student += `<td class="table-row">${students.class_d}</td>`;
         student += `<td class="table-row">${students.gender}</td>`;
+        const dob = students.dob ? students.dob : null;
+        if (dob) {
+          const dobYear = dob.slice(0, 4);
+          const presentAge = 2024 - dobYear;
+          student += `<td class="table-row">${presentAge}</td>`;
+        } else {
+          student += `<td class="table-row">N/A</td>`;
+        }
+        student += `<td class="table-row">${students.class_d}</td>`;
         student += `<td class="table-row">${students.street}, ${students.city}, ${students.country}</td>`;
         student += `<td> <a href="#" student-id="${students.id}" class="editBtn fa-regular fa-pen-to-square" style="color: grey;"></a>  </td>`;
         student += `<td> <a href="#" student-id="${students.id}" class="deleteBtn fa-solid fa-trash" style="color: grey;"></a>  </td>`;
@@ -103,6 +112,7 @@ document.getElementById("studentForm").onsubmit = function () {
 
 const editingForm = document.getElementById("itemsForm");
 
+// PUT student
 editStudent.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.classList.contains("editBtn")) {
