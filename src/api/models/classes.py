@@ -53,3 +53,10 @@ class ClassName(db.Model):
         students = get_class.students
 
         return students
+
+    @classmethod
+    def get_class_id(cls, class_name):
+
+        get_class = cls.query.filter_by(class_name=class_name).first()
+
+        return get_class.id

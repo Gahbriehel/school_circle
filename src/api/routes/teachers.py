@@ -197,7 +197,7 @@ def update_teacher(id):
 
 
 @teacher_routes.route("/<id>/students", methods=["GET"], strict_slashes=False)
-def update_teacher(id):
+def update_teacher_for_student(id):
     """Get all student related to the teacher"""
 
     try:

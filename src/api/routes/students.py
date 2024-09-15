@@ -72,7 +72,15 @@ def create_student():
     """
 
     try:
+
         data = request.get_json()
+
+        if data.get("class_id"):
+            from api.models.classes import ClassName
+
+            class_name_id = ClassName.get_class_id(data["class_d"])
+            data["class_id"] = class_name_id
+
         student_schema = StudentSchema()
         student = student_schema.load(data)
         result = student_schema.dump(student.create())
