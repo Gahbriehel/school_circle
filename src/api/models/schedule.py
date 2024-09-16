@@ -19,19 +19,31 @@ class Schedule(db.Model):
     created_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
 
-    day_of_the_week = db.Column(db.Integer, nullable=False)
-    start_time = db.Column(db.String(20), nullable=False)
-    end_time = db.Column(db.String(20), nullable=False)
+    day_of_the_week = db.Column(db.Integer, nullable=False)  # accepts number from 1 - 7
+    start_time = db.Column(db.String(20), nullable=False)  # accepts string exp: "18:00"
+    end_time = db.Column(db.String(20), nullable=False)  # accepts string exp: "19:00"
 
     # Foreign key relationships
-    class_id = db.Column(db.String(60), db.ForeignKey("classes.id"))
-    class_d = db.relationship("ClassName", back_populates="schedules")
+    class_id = db.Column(
+        db.String(60), db.ForeignKey("classes.id")
+    )  # The class the schdule belongs to
+    class_d = db.relationship(
+        "ClassName", back_populates="schedules"
+    )  # Class data shows the name of the class
 
-    subject_id = db.Column(db.String(60), db.ForeignKey("subjects.id"))
-    subject = db.relationship("Subject", back_populates="schedules")
+    subject_id = db.Column(
+        db.String(60), db.ForeignKey("subjects.id")
+    )  # subject_id receives the subject id
+    subject = db.relationship(
+        "Subject", back_populates="schedules"
+    )  # shows the subject name
 
-    teacher_id = db.Column(db.String(60), db.ForeignKey("teachers.id"))
-    teacher = db.relationship("Teacher", back_populates="schedules")
+    teacher_id = db.Column(
+        db.String(60), db.ForeignKey("teachers.id")
+    )  # receives the teacher's id
+    teacher = db.relationship(
+        "Teacher", back_populates="schedules"
+    )  # shows the teacher for this schedule
 
     def __init__(
         self,

@@ -13,6 +13,7 @@ admin_routes = Blueprint("admin_routes", __name__)
 
 # TODO always update the updated_at key for any update to models made (PUT)
 
+
 @admin_routes.route("/login", methods=["POST"], strict_slashes=False)
 def login():
     """ """
@@ -40,13 +41,12 @@ def login():
         return response_with(resp.INVALID_INPUT_422)
 
 
-
-
 @admin_routes.route("/", methods=["POST"], strict_slashes=False)
 def create_admin():
 
     try:
         data = request.get_json()
+        print("Red here")
         admin_schema = AdminSchema()
         admin = admin_schema.load(data)
         result = admin_schema.dump(admin.create())

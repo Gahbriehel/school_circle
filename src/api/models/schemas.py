@@ -76,7 +76,7 @@ class ClassSchema(SQLAlchemyAutoSchema):
     subjects = fields.List(fields.Nested("ClassSubjectSchema", only=["subject"]))
     schedules = fields.List(fields.Nested("ScheduleSchema"))
     students = fields.List(
-        fields.Nested("StudentSchema", only=["first_name", "last_name"])
+        fields.Nested("StudentSchema", only=["first_name", "last_name", "dob", "gender", "street", "city", "state", "country", "phone_number"])
     )
 
 

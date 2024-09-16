@@ -6,7 +6,6 @@ GET http://127.0.0.1:5000/api/students
 POST http://127.0.0.1:5000/api/students
 Content-Type: application/json
 
-
 {
     "first_name": "Dapo",
     "last_name": "Sunday",
@@ -49,6 +48,31 @@ Content-Type: application/json
 }
 
 
+### POST Class
+POST http://127.0.0.1:5000/api/classes
+Content-Type: application/json
+
+{
+    "class_name": "SSS 1"
+}
+
+### POST Class
+POST http://127.0.0.1:5000/api/classes
+Content-Type: application/json
+
+{
+    "class_name": "SSS 2"
+}
+
+### POST Class
+POST http://127.0.0.1:5000/api/classes
+Content-Type: application/json
+
+{
+    "class_name": "SSS 3"
+}
+
+
 ### 
 GET http://127.0.0.1:5000/api/students/095eaadd-4aa2-4efe-8d43-72b860c71995
 
@@ -77,10 +101,64 @@ Content-Type: application/json
     "confirm_password": "femcouselessco982"
 }
 
+### POST Teacher
+POST http://127.0.0.1:5000/api/teachers
+Content-Type: application/json
+
+
+{
+    "first_name": "Teacher 2",
+    "last_name": "Teacher 2",
+    "email": "teacher2@yahoo.com",
+    "username": "teacher2",
+    "password": "teacher2",
+    "confirm_password": "teacher2"
+}
+
+### POST Teacher
+POST http://127.0.0.1:5000/api/teachers
+Content-Type: application/json
+
+{
+    "first_name": "Teacher 3",
+    "last_name": "Teacher 3",
+    "email": "teacher3@yahoo.com",
+    "username": "teacher3",
+    "password": "teacher3",
+    "confirm_password": "teacher3"
+}
+
+### POST Teacher
+POST http://127.0.0.1:5000/api/teachers
+Content-Type: application/json
+
+
+{
+    "first_name": "Teacher 4",
+    "last_name": "Teacher 4",
+    "email": "teacher4@yahoo.com",
+    "username": "teacher4",
+    "password": "teacher4",
+    "confirm_password": "teacher4"
+}
+
+### POST Teacher
+POST http://127.0.0.1:5000/api/teachers
+Content-Type: application/json
+
+{
+    "first_name": "Teacher 5",
+    "last_name": "Teacher 5",
+    "email": "teacher5@yahoo.com",
+    "username": "teacher5",
+    "password": "teacher5",
+    "confirm_password": "teacher5"
+}
+
+
 ### PUT Teacher th_ f9af9976-d524-4dcc-9822-64814ab2c82a
 PUT http://127.0.0.1:5000/api/teachers/f9af9976-d524-4dcc-9822-64814ab2c82a
 Content-Type: application/json
-
 
 {
     "class_id": "79b615ad-3305-4fd2-bdc8-7a61986b9ce0"
@@ -103,3 +181,132 @@ Content-Type: application/json
     "email": "newemail@yahoo.com",
     "password": "Dapsonco982"
 }
+
+### GET Teacherss
+GET http://127.0.0.1:5000/api/teachers
+
+
+### GET Classes
+GET http://127.0.0.1:5000/api/classes
+
+
+
+### GET subjects
+GET http://127.0.0.1:5000/api/subjects
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "Physics"
+}
+
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "Mathematics"
+}
+
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "English"
+}
+
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "Agric"
+}
+
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "Chemistry"
+}
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "Basic Tech"
+}
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "Computer"
+}
+
+### POST subjects
+POST http://127.0.0.1:5000/api/subjects
+Content-Type: application/json
+
+{
+    "subject_name": "Business Studies"
+}
+
+
+###
+GET http://127.0.0.1:5000/api/admins
+
+
+
+###
+POST http://127.0.0.1:5000/api/admins
+Content-Type: application/json
+
+{
+    "first_name": "Admin 1",
+    "last_name": "Admin 1",
+    "email": "admin1@yahoo.com",
+    "username": "admin1",
+    "password": "admin1"
+}
+
+### POST Teacher
+POST http://127.0.0.1:5000/api/teachers
+Content-Type: application/json
+
+{
+    "first_name": "Teacher 6",
+    "last_name": "Teacher 6",
+    "email": "teacher6@yahoo.com",
+    "username": "teacher6",
+    "password": "teacher6",
+    "confirm_password": "teacher6",
+    "class_id": "SSS 3"
+}
+
+### Teacher SS2 -> 294d22ad-b1e6-4f3f-9710-bb864a9c52fb
+### Student       "id": "d565af44-2fd6-4ffd-91b4-88102f0c2b86",
+### Class ss2       "id": "b7c25f8c-d0c3-4e49-8049-1ab73b99e2a4",
+
+PUT http://127.0.0.1:5000/api/students/d565af44-2fd6-4ffd-91b4-88102f0c2b86
+Content-Type: application/json
+
+{
+    "class_id": "b7c25f8c-d0c3-4e49-8049-1ab73b99e2a4"
+}
+
+### GET Teacher's student
+GET http://127.0.0.1:5000/api/teachers/294d22ad-b1e6-4f3f-9710-bb864a9c52fb/students
+
+### 
+GET http://127.0.0.1:5000/api/teachers/294d22ad-b1e6-4f3f-9710-bb864a9c52fb

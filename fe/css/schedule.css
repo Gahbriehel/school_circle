@@ -1,0 +1,14 @@
+table {
+    margin: auto;
+    display: table;
+    border: 10px solid black;
+}
+
+th {
+    padding: 20px;
+}
+
+th:not(:first-child) {
+    border-left: 1px solid black;
+}
+

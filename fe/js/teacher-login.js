@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           throw new Error("Server Error");
         }
-      })
+      }) 
       .then((userData) => {
         localStorage.setItem("teacherName", userData.Teacher.first_name);
         window.location.href = "./teacher-dashboard.html";

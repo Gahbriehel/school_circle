@@ -17,4 +17,5 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("You are being redirected to view your students");
     window.location.href = "./teacher-view-students.html";
   });
+  
 });

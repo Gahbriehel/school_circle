@@ -19,6 +19,7 @@ def login():
         data = request.get_json()
         get_teacher = Teacher.find_by_email(data["email"])
 
+        print("")
         if not get_teacher and not data:
             return response_with(
                 resp.SERVER_ERROR_404, value={"message", "user not found"}
@@ -54,14 +55,21 @@ def create_teacher():
     """
 
     try:
-        print(request.get_data())
         data = request.get_json()
+
+        if data.get("class_id"):
+            from api.models.classes import ClassName
+
+            get_class_id = ClassName.get_class_id(data["class_id"])
+            data["class_id"] = get_class_id
+
         teacher_schema = TeacherSchema()
         teacher = teacher_schema.load(data)
         result = teacher_schema.dump(teacher.create())
         print("Teacher created successfully")
         print("received data:", data)
         return response_with(resp.SUCCESS_201, value={"teacher": result})
+
     except Exception as e:
         print(e)
         return response_with(resp.INVALID_INPUT_422)
@@ -196,7 +204,7 @@ def update_teacher(id):
 
 
 @teacher_routes.route("/<id>/students", methods=["GET"], strict_slashes=False)
-def update_teacher_for_student(id):
+def get_student_for_teacher(id):  # teacher.class_id
     """Get all student related to the teacher"""
 
     try:
@@ -205,7 +213,18 @@ def update_teacher_for_student(id):
         if not get_teacher:
             return response_with(resp.SERVER_ERROR_404, message="Teacher not found")
 
-        students = get_teacher.get_all_students(get_teacher.class_id)
+        if get_teacher.class_id:
+            from api.models.classes import ClassName
+            from api.models.schemas import ClassSchema
+
+            get_class = ClassName.query.get(get_teacher.class_id)
+
+            class_schema = ClassSchema()
+            class_data = class_schema.dump(get_class)
+
+        print(class_data["students"])
+        students = class_data["students"]
+
         if not students:
             raise Exception
         print("Student gotten successfuly")
