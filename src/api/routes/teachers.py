@@ -6,7 +6,6 @@ from api.utils import responses as resp
 from api.models.teachers import Teacher
 from api.utils.database import db
 from api.models.schemas import TeacherSchema
-from api.models.classes import ClassName
 
 
 teacher_routes = Blueprint("teacher_routes", __name__)
