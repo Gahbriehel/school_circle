@@ -76,7 +76,20 @@ class ClassSchema(SQLAlchemyAutoSchema):
     subjects = fields.List(fields.Nested("ClassSubjectSchema", only=["subject"]))
     schedules = fields.List(fields.Nested("ScheduleSchema"))
     students = fields.List(
-        fields.Nested("StudentSchema", only=["first_name", "last_name", "dob", "gender", "street", "city", "state", "country", "phone_number"])
+        fields.Nested(
+            "StudentSchema",
+            only=[
+                "first_name",
+                "last_name",
+                "dob",
+                "gender",
+                "street",
+                "city",
+                "state",
+                "country",
+                "phone_number",
+            ],
+        )
     )
 
 
@@ -135,11 +148,9 @@ class SubjectTeacherSchema(SQLAlchemyAutoSchema):
 
     teacher_id = fields.String(required=True, load_only=True)
     subject_id = fields.String(required=True, load_only=True)
-
-    teacher = fields.List(
-        fields.Nested("TeacherSchema", only=["first_name", "last_name"])
-    )
-    subject = fields.List(fields.Nested("SubjectSchema", only=["subject_name"]))
+    id = fields.String(dump_only=True)
+    teacher = fields.Pluck("TeacherSchema", "first_name", dump_only=True)
+    subject = fields.Pluck("SubjectSchema", "subject_name", dump_only=True)
 
 
 class ScheduleSchema(SQLAlchemyAutoSchema):

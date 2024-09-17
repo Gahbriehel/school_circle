@@ -39,10 +39,15 @@ class SubjectTeacher(db.Model):
         Initializes the Subject Teacher Object
         """
         self.created_at = datetime.utcnow()
+        print("After created_at")
         self.updated_at = datetime.utcnow()
+        print("After updated_at")
         self.id = str(uuid4())
+        print("After str_at")
         self.teacher_id = teacher_id
-        self.subject_id - subject_id
+        print("After teacher_id")
+        self.subject_id = subject_id
+        print("After subject_id")
 
     def create(self):
         # Adds the Subject Teacher instance to the session and commits to it

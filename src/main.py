@@ -24,6 +24,8 @@ from api.routes.classes import class_routes
 from api.routes.subjects import subject_routes
 from api.routes.class_subject import class_subject_r
 from api.routes.student_subject import st_subject
+from api.routes.subject_teacher import subject_teacher_r
+
 
 # Determine environment and load corresponding config
 if os.getenv("WORK_ENV") == "PROD":
@@ -53,6 +55,7 @@ app.register_blueprint(student_routes, url_prefix="/api/students")
 app.register_blueprint(st_subject, url_prefix="/api/student_subject")
 app.register_blueprint(admin_routes, url_prefix="/api/admins")
 app.register_blueprint(parent_routes, url_prefix="/api/parents")
+app.register_blueprint(subject_teacher_r, url_prefix="/api/subject_teachers")
 
 
 # START GLOBAL HTTP CONFIGS
