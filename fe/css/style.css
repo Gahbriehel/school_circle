@@ -252,13 +252,7 @@ nav {
   align-items: center;
 }
 
-.story2 {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4rem;
-  align-items: center;
-}
-
+.story2,
 .story3 {
   display: flex;
   justify-content: space-between;
@@ -380,8 +374,6 @@ nav {
 .f3,
 .f4,
 .f5 {
-  /* display: flex; */
-  /* justify-content: space-evenly; */
   margin-left: 12rem;
   margin-top: 2rem;
 }

@@ -37,7 +37,7 @@
 
   /*              nav         */
 
-  .nav_links {
+  .nav-links {
     position: absolute;
     top: 100%;
     right: 0;
@@ -47,14 +47,15 @@
     perspective: 400px;
   }
 
-  .nav_links li {
+  .nav-links li {
     height: 4rem;
     width: 14rem;
     box-shadow: -3rem 3rem 3rem rgba(0, 0, 0, 0.7);
   }
 
-  .nav_links li a {
-    background: var(--color-bg-4);
+  .nav-links li a {
+    background: var(--color-bg-3);
+    color: var(--color-light);
     height: 100%;
     width: 100%;
     display: flex;
@@ -92,7 +93,7 @@
     display: block;
     margin: auto;
     border-radius: 30px 30px 0px 0px;
-    width: 85%;
+    width: 80%;
   }
 
   #tour-btn {
@@ -109,19 +110,118 @@
 
   /* Users section */
 
-  .user-text1 {
-    font-size: 15px;
-    width: 19rem;
+  .user-text1,
+  .user-text2,
+  .user-text3 {
+    font-size: 16px;
+    width: 20rem;
     /* display: none; */
   }
 
-  .user-left {
-    width: 4rem;
-  }
-  .user-image {
-    width: 25rem;
-    height: 14rem;
+  .user-image,
+  .story-image {
+    width: 28rem;
+    height: 16rem;
     /* margin-right: 4rem; */
   }
- 
+
+  #see-more-btn {
+    width: 8rem;
+    height: 2.3rem;
+    margin-right: 40rem;
+  }
+
+  /* Stories section */
+
+  .story-text1,
+  .story-text2,
+  .story-text3 {
+    font-size: 16px;
+    width: 25rem;
+  }
+  .story1h2,
+  .story2h2,
+  .story3h2 {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .story-text1,
+  .story-text3 {
+    align-items: center;
+    width: 24rem;
+    margin-right: 5rem;
+    font-size: 16px;
+  }
+
+  .story-text2 {
+    align-items: center;
+    width: 24rem;
+    margin-left: 5rem;
+    font-size: 16px;
+  }
+
+  #see-more2-btn {
+    margin-left: 35rem;
+    width: 8rem;
+    height: 2.3rem;
+  }
+
+  .vision-detail h2,
+  .mission-detail h2 {
+    font-size: 2.3rem;
+  }
+
+  .vision {
+    height: 678px;
+  }
+
+  .vision-detail p,
+  .mission-detail p {
+    font-size: 18px;
+  }
+
+  .mission-detail {
+    margin-top: -4rem;
+  }
+
+  /* Features section */
+
+  .features {
+    font-size: 16px;
+  }
+
+  .f1,
+  .f2,
+  .f3,
+  .f4,
+  .f5 {
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    margin-left: 3rem;
+    margin-top: 2rem;
+  }
+
+  .features h2 {
+    font-size: 2rem;
+  }
+
+  .features p {
+    margin-right: 2.5rem;
+  }
+
+  /* Ready section */
+
+  .ready {
+    height: 230px;
+  }
+
+  .ready-text {
+    font-size: 20px;
+    margin-top: 2rem;
+  }
+
+  .footer {
+    font-size: 18px;
+  }
 }
