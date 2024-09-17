@@ -26,12 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => {
+      .then(async (response) => {
         if (response.status === 200 || response.status === 201) {
           let teacherProfileName = fname.value;
           localStorage.setItem("teacherName", teacherProfileName);
           let teacherClass = classId.value;
           localStorage.setItem("profileClass", teacherClass);
+          let data = await response.json();
+          console.log("sent teacher id: ", data.teacher.id);
+          let teacherId = data.teacher.id;
+          localStorage.setItem("teacherId", teacherId);
           window.location.href = "./teacher-dashboard.html";
         } else {
           alert("Oops! There was a problem submitting the form");

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (welcomeText) {
     if (studentName) {
       welcomeText.innerHTML = `WELCOME ${studentName.toUpperCase()}`;
-      studentClass.innerHTML = `CLASS: ${profileClass}`;
+      studentClass.innerHTML = `CLASS: ${profileClass.toUpperCase()}`;
     } else {
       welcomeText.innerHTML = `WELCOME 'unknown'`;
     }

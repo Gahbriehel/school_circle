@@ -78,12 +78,12 @@
 
   /*              header          */
 
-  header {
+  /* header {
     height: fit-content;
     padding: 14rem 0 12rem;
     display: grid;
     place-items: center;
-  }
+  } */
 
   .bigpic {
     display: none;
@@ -223,5 +223,153 @@
 
   .footer {
     font-size: 18px;
+  }
+
+  /* About page */
+
+  .about1-detail h2,
+  .about3-detail h2,
+  .about4-detail h2,
+  .about6-detail h2 {
+    font-size: 2.3rem;
+  }
+
+  .about1-detail p,
+  .about3-detail p,
+  .about4-detail p {
+    font-size: 19px;
+    width: 35rem;
+  }
+
+  .about2-detail h2,
+  .about5-detail h2,
+  .about7-detail h2 {
+    font-size: 2.3rem;
+  }
+
+  .about2-detail p,
+  .about7-detail p {
+    font-size: 19px;
+    /* display: none; */
+  }
+
+  .about5-detail h3 {
+    font-size: 21px;
+  }
+
+  .about5-detail,
+  .about6-detail {
+    font-size: 21px;
+  }
+
+  .about5-detail {
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+  }
+
+  .about6-detail h2 {
+    margin-top: -6rem;
+  }
+
+  .about7-detail {
+    margin-right: 2rem;
+  }
+
+  /* Sign up page */
+
+  #student-btn,
+  #teacher-btn {
+    width: 500px;
+  }
+
+  #continue-btn {
+    width: 110px;
+    font-size: 18px;
+  }
+
+  /* Sign in page */
+
+  #student-btnn,
+  #teacher-btnn,
+  #admin-btnn {
+    width: 500px;
+  }
+
+  #continue-btnn {
+    width: 110px;
+    font-size: 18px;
+  }
+
+  /* Contact Us Page */
+
+  .contact-text {
+    font-size: 15px;
+  }
+
+  .form-group {
+    font-size: 15px;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 90%;
+  }
+
+  .form-group button {
+    width: 6rem;
+    margin-top: -2rem;
+  }
+
+  .reach-us h2 {
+    font-size: 21px;
+  }
+
+  /* All Dashboards */
+
+  #welcome,
+  #class {
+    font-size: 22px;
+  }
+
+  .pfp {
+    width: 3.5rem;
+  }
+
+  #schedule-btn,
+  #check-classes-btn,
+  #announcement-btn,
+  #newsletter-btn,
+  #view-students-btn,
+  #view-teachers-btn,
+  #view-classes-btn {
+    width: 15rem;
+    height: 6rem;
+    font-size: 20px;
+  }
+
+  /* View students */
+
+  .student-table th {
+    font-size: 16px;
+    width: 125px;
+  }
+
+  #items {
+    font-size: 2rem;
+  }
+
+  #studentForm label {
+    font-size: 19px;
+  }
+
+  #studentForm input {
+    width: 12rem;
+  }
+
+  /* View teachers */
+
+  .teacher-table th {
+    font-size: 16px;
+    width: 125px;
   }
 }

@@ -110,13 +110,6 @@ td {
   justify-content: space-between;
 }
 
-/* @media screen and (max-width: 1024px) {
-    .all {
-      grid-template-columns: 40% 54%;
-      gap: 6%;
-    }
-  } */
-
 .student-form {
   font-size: 21px;
   color: var(--color-secondary-variant);

@@ -61,7 +61,7 @@ POST http://127.0.0.1:5000/api/classes
 Content-Type: application/json
 
 {
-    "class_name": "SSS 2"
+    "class_name": "jss1"
 }
 
 ### POST Class
@@ -69,8 +69,14 @@ POST http://127.0.0.1:5000/api/classes
 Content-Type: application/json
 
 {
-    "class_name": "SSS 3"
+    "class_name": "sss3"
 }
+
+### Get classes
+GET http://127.0.0.1:5000/api/classes
+
+### DELETE CLASS BY ID
+DELETE http://127.0.0.1:5000/api/classes/d5a059e3-5bfa-4fbd-989b-1e90eee53bdd
 
 
 ### 
@@ -306,7 +312,7 @@ Content-Type: application/json
 }
 
 ### GET Teacher's student
-GET http://127.0.0.1:5000/api/teachers/294d22ad-b1e6-4f3f-9710-bb864a9c52fb/students
+GET http://127.0.0.1:5000/api/teachers/7f13232c-7f83-4ddb-9f4d-6784a50e2448/students
 
 ### 
-GET http://127.0.0.1:5000/api/teachers/294d22ad-b1e6-4f3f-9710-bb864a9c52fb
+GET http://127.0.0.1:5000/api/teachers/7f13232c-7f83-4ddb-9f4d-6784a50e2448

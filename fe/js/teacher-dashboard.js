@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const teacherName = localStorage.getItem("teacherName");
   const teacherClass = document.getElementById("class");
   const teacherProfileClass = localStorage.getItem("profileClass");
+  const teacherId = localStorage.getItem("teacherId");
 
   if (welcomeText) {
     if (teacherName) {
       welcomeText.innerHTML = `WELCOME ${teacherName.toUpperCase()}`;
-      teacherClass.innerHTML = `CLASS: ${teacherProfileClass}`;
+      teacherClass.innerHTML = `CLASS: ${teacherProfileClass.toUpperCase()}`;
     } else {
       welcomeText.innerHTML = `WELCOME 'unknown'`;
     }
@@ -17,5 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("You are being redirected to view your students");
     window.location.href = "./teacher-view-students.html";
   });
-  
 });
+
+const teacherUrl = "http://127.0.0.1:5000/api/teachers";
+fetch(teacherUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  });

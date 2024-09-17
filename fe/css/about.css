@@ -54,6 +54,7 @@
 
 .about1 p,
 .about3 p,
+.about2 p,
 .about4 p,
 .about6 p {
   align-items: center;
@@ -71,11 +72,9 @@
 .about2,
 .about7,
 .about5 {
-  /* background-color: var(--color-main); */
   color: var(--color-main);
   font-size: 24px;
   text-align: center;
-  /* height: 878px; */
 }
 
 .about2-detail,

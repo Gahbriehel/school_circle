@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const teacherName = localStorage.getItem("teacherName");
   const teacherClass = document.getElementById("class");
   const teacherProfileClass = localStorage.getItem("profileClass");
+  const teacherId = localStorage.getItem("teacherId");
 
   if (teacherName) {
     welcomeText.innerHTML = `${teacherName.toUpperCase()}`;
@@ -11,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const itemForm = document.getElementById("itemsForm");
-const url = "http://localhost:5000/api/students";
+
+const url = `http://localhost:5000/api/teachers/${teacherId}/students`;
 
 // Get request
 fetch(url)
@@ -19,7 +21,6 @@ fetch(url)
   .then((data) => {
     console.log(data);
     console.log(data.students);
-    console.log(data.students[0].first_name);
     if (data.students) {
       let student = ""; // Initialize the table rows string
       data.students.forEach((students) => {
@@ -27,8 +28,15 @@ fetch(url)
         student += `<tr class="trow">`;
         student += `<td class="table-row">${students.first_name}</td>`;
         student += `<td class="table-row">${students.last_name}</td>`;
-        student += `<td class="table-row">${students.class_d}</td>`;
         student += `<td class="table-row">${students.gender}</td>`;
+        const dob = students.dob ? students.dob : null;
+        if (dob) {
+          const dobYear = dob.slice(0, 4);
+          const presentAge = 2024 - dobYear;
+          student += `<td class="table-row">${presentAge}</td>`;
+        } else {
+          student += `<td class="table-row">N/A</td>`;
+        }
         student += `<td class="table-row">${students.street}, ${students.city}, ${students.country}</td>`;
         student += "</tr>";
       });
