@@ -89,6 +89,14 @@ nav {
   align-items: center;
 }
 
+.user-text02 {
+  display: none;
+}
+
+.story-text02 {
+  display: none;
+}
+
 .nav-links {
   display: flex;
   gap: 3rem;
