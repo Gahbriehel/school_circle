@@ -15,6 +15,23 @@ Content-Type: application/json
     "confirm_password": "Dapsonco982"
 }
 
+### GET subject teacher
+GET http://127.0.0.1:5000/api/subject_teachers
+
+
+### DELETE Test
+DELETE http://127.0.0.1:5000/api/subject_teachers/0d703ecd-77e0-4d6f-8102-920ef16bb7bd
+
+
+### GET Classes
+POST http://127.0.0.1:5000/api/subject_teachers
+Content-Type: application/json
+
+{
+    "teacher_id": "294d22ad-b1e6-4f3f-9710-bb864a9c52fb",
+    "subject_id": "98754564-2a07-47f4-8362-7a004dab5c29"
+}
+
 
 ### GET
 GET http://127.0.0.1:5000/api/classes/79b615ad-3305-4fd2-bdc8-7a61986b9ce0

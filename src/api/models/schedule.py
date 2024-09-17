@@ -45,6 +45,7 @@ class Schedule(db.Model):
         "Teacher", back_populates="schedules"
     )  # shows the teacher for this schedule
 
+
     def __init__(
         self,
         day_of_the_week,
