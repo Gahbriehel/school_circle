@@ -389,6 +389,45 @@
     width: 12rem;
   }
 
+  .student-table {
+    margin: 2rem 0;
+    font-size: 17px;
+  }
+
+  .table {
+    width: 100%;
+    font-size: 17px;
+  }
+
+  .tableHead {
+    width: auto;
+    height: auto;
+    font-size: 19px;
+    padding: 8px;
+  }
+
+  th {
+    width: auto;
+    padding: 5px;
+  }
+
+  td {
+    padding-top: 0.5rem;
+    font-size: 14px;
+  }
+
+  .delClm {
+    width: 25px;
+    padding: 5px;
+  }
+
+  /* Add horizontal scrolling for small screens */
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
   /* View teachers */
 
   .teacher-table th {
@@ -397,7 +436,7 @@
   }
 }
 
-/* Media queries   (Small screens) */
+/* Media queries   (Small-medium screens) */
 @media screen and (max-width: 700px) {
   .container {
     width: var(--container-width-md);
@@ -420,13 +459,15 @@
   /*              nav         */
 
   .nav-links {
+    display: none;
+    margin-top: -2rem;
     position: absolute;
     top: 100%;
     right: 0;
     flex-direction: column;
     gap: 0;
-    display: none;
     perspective: 400px;
+    text-wrap: nowrap;
   }
 
   .nav-links li {
@@ -442,7 +483,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 1rem 5rem 1rem 3rem;
+    padding: 1rem 5rem 1rem 1.5rem;
     border-top: 1px solid var(--color-bg-2);
   }
 
@@ -806,6 +847,45 @@
     width: 12rem;
   }
 
+  .student-table {
+    margin: 2rem 0;
+    font-size: 17px;
+  }
+
+  .table {
+    width: 100%;
+    font-size: 17px;
+  }
+
+  .tableHead {
+    width: auto;
+    height: auto;
+    font-size: 17px;
+    padding: 8px;
+  }
+
+  th {
+    width: auto;
+    padding: 5px;
+  }
+
+  td {
+    padding-top: 0.5rem;
+    font-size: 16px;
+  }
+
+  .delClm {
+    width: 30px;
+    padding: 5px;
+  }
+
+  /* Add horizontal scrolling for small screens */
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
   /* View teachers */
 
   .teacher-table th {
@@ -850,5 +930,624 @@
 
   #login-error {
     text-align: center;
+  }
+}
+
+/* Media queries   (Small screens) */
+@media screen and (max-width: 500px) {
+  .container {
+    width: var(--container-width-md);
+    position: relative;
+  }
+
+  .logo {
+    width: 6rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  /*              nav         */
+
+  .nav-links {
+    display: none;
+    margin-top: -2rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    perspective: 400px;
+    text-wrap: nowrap;
+  }
+
+  .nav-links li {
+    height: 3rem;
+    width: 8rem;
+    font-size: 12px;
+    box-shadow: -3rem 3rem 3rem rgba(0, 0, 0, 0.7);
+  }
+
+  .nav-links li a {
+    background: var(--color-bg-3);
+    color: var(--color-light);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 5rem 1rem 1rem;
+    border-top: 1px solid var(--color-bg-2);
+  }
+
+  .nav_toggle-btn {
+    display: inline-block;
+    font-size: 1.8rem;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-primary-variant);
+  }
+
+  #nav_toggle-close {
+    display: none;
+  }
+
+  /*              header          */
+
+  .bigpic {
+    display: none;
+  }
+
+  .smallpic {
+    display: block;
+    margin: auto;
+    border-radius: 30px 30px 0px 0px;
+    width: 80%;
+  }
+
+  #tour-btn,
+  #get-started-btn {
+    width: 6rem;
+    height: 1.8rem;
+    font-size: 15px;
+  }
+
+  /* Users section */
+
+  .user-text1,
+  .user-text2,
+  .user-text3 {
+    font-size: 13px;
+    width: 18rem;
+    margin-bottom: -2rem;
+  }
+
+  .user-image,
+  .story-image {
+    width: 22rem;
+    height: 12rem;
+  }
+
+  #user-text2 {
+    display: none;
+  }
+  .user-right .user-text2 {
+    display: none;
+  }
+
+  .user-text02 {
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: -2rem;
+    width: 18rem;
+  }
+
+  .user-image,
+  .story-image {
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  #see-more-btn {
+    width: 5rem;
+    height: 2rem;
+    margin-right: 15rem;
+    font-size: 13px;
+  }
+
+  /* Stories section */
+  .stories {
+    display: block;
+    text-align: center;
+  }
+
+  .story-left .story-text2 {
+    display: none;
+  }
+
+  .story-text02 {
+    display: inline-block;
+    font-size: 13px;
+    width: 18rem;
+  }
+
+  .story-text1,
+  .story-text3 {
+    display: inline-block;
+    font-size: 13px;
+    width: 18rem;
+    margin: auto;
+  }
+  .story1h2,
+  .story2h2,
+  .story3h2 {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-bottom: -2rem;
+    text-align: center;
+  }
+
+  #see-more2-btn {
+    width: 5rem;
+    height: 2rem;
+    margin-left: 15rem;
+    margin-top: 1rem;
+    font-size: 13px;
+  }
+
+  /* Vision section */
+
+  .vision-detail h2,
+  .mission-detail h2 {
+    font-size: 1.3rem;
+  }
+
+  .vision {
+    height: 678px;
+  }
+
+  .vision-detail p,
+  .mission-detail p {
+    font-size: 13px;
+  }
+
+  .mission-detail {
+    margin: -2rem 2rem;
+  }
+
+  .vision-detail {
+    margin: 0 2rem;
+    margin-bottom: -4rem;
+  }
+
+  /* Features section */
+
+  .features {
+    font-size: 13px;
+  }
+
+  .f1,
+  .f2,
+  .f3,
+  .f4,
+  .f5 {
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-top: 2rem;
+  }
+
+  .features h2 {
+    font-size: 1.2rem;
+  }
+
+  .features p {
+    margin-right: 1rem;
+    text-align: left;
+    padding-top: 0;
+    margin-left: 0;
+    width: 90%;
+  }
+
+  /* Ready section */
+
+  .ready {
+    height: 250px;
+  }
+
+  .ready-text {
+    font-size: 13px;
+    margin-top: 2rem;
+    width: 90%;
+  }
+
+  .footer {
+    font-size: 13px;
+    text-align: center;
+  }
+  .footer-left {
+    padding-left: 1rem;
+  }
+
+  .footer-right {
+    padding-right: 1rem;
+  }
+
+  /* About page */
+
+  .about1 {
+    height: 20rem;
+  }
+
+  .about2 {
+    height: 24rem;
+  }
+
+  .about4 {
+    height: 25rem;
+  }
+
+  .about1-detail h2,
+  .about6-detail h2 {
+    font-size: 1.2rem;
+  }
+  .about3-detail h3,
+  .about4-detail h2 {
+    font-size: 1.3rem;
+  }
+  .about3-detail h3 {
+    line-height: 1.2;
+  }
+
+  .about1-detail p,
+  .about3-detail p,
+  .about4-detail p {
+    font-size: 13px;
+    width: 30rem;
+  }
+
+  .about2-detail h2,
+  .about5-detail h2,
+  .about7-detail h2 {
+    font-size: 1.2rem;
+  }
+
+  .about2-detail p,
+  .about7-detail p {
+    font-size: 13px;
+    width: 30rem;
+  }
+
+  .about3-detail {
+    margin-bottom: -15rem;
+  }
+
+  .about5-detail h3 {
+    font-size: 16px;
+  }
+
+  .about5-detail,
+  .about6-detail {
+    font-size: 16px;
+  }
+
+  .about5-detail {
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+  }
+
+  .about6-detail h2 {
+    margin-top: -10rem;
+    margin-bottom: -6rem;
+  }
+
+  .about7-detail {
+    margin-right: 2rem;
+    margin-bottom: -4rem;
+  }
+
+  /* Sign up page */
+
+  #header-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  #student-btn,
+  #teacher-btn {
+    width: 150px;
+    height: 41px;
+    font-size: 16px;
+  }
+
+  #continue-btn {
+    width: 105px;
+    height: 41px;
+    font-size: 16px;
+  }
+
+  /* Sign in page */
+
+  #student-btnn,
+  #teacher-btnn,
+  #admin-btnn {
+    width: 150px;
+    height: 41px;
+    font-size: 16px;
+  }
+
+  #continue-btnn {
+    width: 105px;
+    height: 41px;
+    font-size: 16px;
+  }
+
+  /* Contact Us Page */
+
+  .contact-text {
+    font-size: 12px;
+  }
+
+  .form-group {
+    font-size: 15px;
+  }
+
+  .form-group input {
+    width: 70%;
+    height: 2.1rem;
+  }
+
+  .form-group textarea {
+    height: 8rem;
+  }
+
+  .form-group button {
+    margin-top: -2rem;
+    width: 120px;
+  }
+
+  .reach-us h2 {
+    font-size: 16px;
+  }
+
+  /* All Dashboards */
+
+  .profile-all {
+    margin: 8rem 0rem;
+    margin-left: 4rem;
+  }
+  .profile {
+    flex-direction: column;
+  }
+
+  #welcome,
+  #class {
+    font-size: 15px;
+  }
+
+  .pfp {
+    width: 3rem;
+  }
+
+  .dpfp {
+    display: none;
+  }
+
+  #schedule-btn,
+  #check-classes-btn,
+  #announcement-btn,
+  #newsletter-btn,
+  #view-students-btn,
+  #view-teachers-btn,
+  #view-classes-btn {
+    width: 10.5rem;
+    height: 4rem;
+    font-size: 16px;
+  }
+
+  .arrows {
+    padding: 2rem;
+  }
+  /* View students */
+
+  .setting-icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .profile {
+    margin: -2rem -3.5rem;
+  }
+
+  .all h1 {
+    font-size: 2rem;
+  }
+
+  .student-table {
+    margin: 2rem 0;
+    font-size: 14px;
+  }
+
+  .table {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .tableHead {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  th {
+    width: auto;
+    padding: 5px;
+  }
+
+  td {
+    padding-top: 0.5rem;
+    font-size: 12px;
+  }
+
+  .delClm {
+    width: 25px;
+    padding: 5px;
+  }
+
+  /* Add horizontal scrolling for small screens */
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #items {
+    font-size: 2rem;
+  }
+
+  .student-form {
+    font-size: 16px;
+    width: 90%;
+    padding-bottom: 2rem;
+  }
+
+  .student-form input {
+    width: 100%;
+    margin-left: 0;
+    height: 1.5rem;
+  }
+
+  .student-form label {
+    margin-left: 0;
+  }
+
+  #studentForm {
+    width: 100%;
+    height: auto;
+  }
+
+  /* View teachers */
+
+  .teacher-table {
+    margin: 2rem 0;
+    font-size: 14px;
+  }
+
+  .table {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .tableHead {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  th {
+    width: auto;
+    padding: 5px;
+  }
+
+  td {
+    padding-top: 0.5rem;
+    font-size: 12px;
+  }
+
+  .delClm {
+    width: 25px;
+    padding: 5px;
+  }
+
+  /* Add horizontal scrolling for small screens */
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #items {
+    font-size: 2rem;
+  }
+
+  .teacher-form {
+    font-size: 16px;
+    width: 90%;
+    padding-bottom: 2rem;
+  }
+
+  .teacher-form input {
+    width: 100%;
+    margin-left: 0;
+    height: 1.5rem;
+  }
+
+  .teacher-form label {
+    margin-left: 0;
+  }
+
+  #teacherForm {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Sign in  */
+
+  .form-container1 h1 {
+    font-size: 20px;
+  }
+
+  .form-group1 input {
+    width: 18rem;
+  }
+
+  .form-group1 button {
+    width: 5.5rem;
+    height: 2.8rem;
+    padding: 15px;
+    margin-top: 1rem;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  #login-error {
+    text-align: center;
+  }
+
+  /* Sign up */
+
+  .form-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form-container h2 {
+    font-size: 2rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 70%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .form-group {
+    font-size: 16px;
+  }
+
+  .form-group button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 1.5rem;
+    font-size: 14px;
   }
 }

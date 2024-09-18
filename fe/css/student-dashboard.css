@@ -50,22 +50,6 @@
   padding: 1rem;
 }
 
-/* #tour-btn {
-  width: 13rem;
-  height: 5rem;
-  border-radius: 15px;
-  background: var(--color-primary-variant);
-  color: var(--color-white);
-  font-size: 24px;
-  text-align: center;
-  margin-right: 1rem;
-}
-
-#tour-btn:hover {
-  background-color: var(--color-white);
-  color: var(--color-primary-variant);
-} */
-
 .home-btns {
   margin-top: 3rem;
   display: flex;

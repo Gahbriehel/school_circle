@@ -6,11 +6,11 @@ const url = "http://localhost:5000/api/students";
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeText = document.getElementById("welcome");
   const adminName = localStorage.getItem("adminName");
-  // const adminClass = document.getElementById("class");
+  const adminClass = document.getElementById("class");
 
   if (adminName) {
     welcomeText.innerHTML = `${adminName.toUpperCase()}`;
-    // adminClass.innerHTML = `CLASS: `;
+    adminClass.innerHTML = `sudo`;
   }
 });
 

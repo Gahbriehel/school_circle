@@ -61,14 +61,6 @@
   text-align: center;
 }
 
-#submit {
-  background-color: black;
-  color: white;
-  width: 8rem;
-  height: 2rem;
-  border-radius: 4px;
-}
-
 .student-table {
   margin: 4rem 0;
   font-size: 18px;
@@ -103,13 +95,6 @@ td {
   background-color: var(--color-main);
 }
 
-.arrows {
-  margin-top: 7rem;
-  padding: 5rem;
-  display: flex;
-  justify-content: space-between;
-}
-
 .student-form {
   font-size: 21px;
   color: var(--color-secondary-variant);
@@ -142,7 +127,22 @@ td {
   text-align: left;
 }
 
+#submit {
+  background-color: black;
+  color: white;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 4px;
+}
+
 #submit:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary-variant);
+}
+
+.arrows {
+  margin-top: 7rem;
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
 }
