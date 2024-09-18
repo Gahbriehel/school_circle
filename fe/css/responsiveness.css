@@ -292,6 +292,24 @@
     font-size: 18px;
   }
 
+  .form-container1 h1 {
+    font-size: 35px;
+  }
+
+  .form-group1 input {
+    width: 32rem;
+  }
+
+  .form-group1 button {
+    width: 7rem;
+    height: 2.8rem;
+    margin-top: 1rem;
+  }
+
+  #login-error {
+    text-align: center;
+  }
+
   /* Sign in page */
 
   #student-btnn,
@@ -612,35 +630,41 @@
   .about3-detail h2,
   .about4-detail h2,
   .about6-detail h2 {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
 
   .about1-detail p,
   .about3-detail p,
   .about4-detail p {
-    font-size: 19px;
-    width: 35rem;
+    font-size: 16px;
+    width: 30rem;
   }
 
   .about2-detail h2,
   .about5-detail h2,
   .about7-detail h2 {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
 
   .about2-detail p,
   .about7-detail p {
-    font-size: 19px;
+    font-size: 16px;
+    width: 30rem;
+
     /* display: none; */
   }
 
+  .about3-detail {
+    margin-bottom: -15rem;
+  }
+
   .about5-detail h3 {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .about5-detail,
   .about6-detail {
-    font-size: 21px;
+    font-size: 16px;
   }
 
   .about5-detail {
@@ -649,7 +673,8 @@
   }
 
   .about6-detail h2 {
-    margin-top: -6rem;
+    margin-top: -10rem;
+    margin-bottom: -6rem;
   }
 
   .about7-detail {
@@ -658,9 +683,15 @@
 
   /* Sign up page */
 
+  #header-text {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
   #student-btn,
   #teacher-btn {
-    width: 500px;
+    width: 200px;
+    height: 50px;
   }
 
   #continue-btn {
@@ -673,7 +704,8 @@
   #student-btnn,
   #teacher-btnn,
   #admin-btnn {
-    width: 500px;
+    width: 200px;
+    height: 50px;
   }
 
   #continue-btnn {
@@ -693,7 +725,7 @@
 
   .form-group input,
   .form-group select {
-    width: 90%;
+    width: 80%;
   }
 
   .form-group button {
@@ -702,18 +734,22 @@
   }
 
   .reach-us h2 {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   /* All Dashboards */
 
+  .profile-all {
+    margin: 8rem 2rem;
+  }
+
   #welcome,
   #class {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .pfp {
-    width: 3.5rem;
+    width: 3.1rem;
   }
 
   #schedule-btn,
@@ -723,20 +759,43 @@
   #view-students-btn,
   #view-teachers-btn,
   #view-classes-btn {
-    width: 15rem;
-    height: 6rem;
-    font-size: 20px;
+    width: 12rem;
+    height: 5rem;
+    font-size: 17px;
   }
 
   /* View students */
 
-  .student-table th {
-    font-size: 16px;
-    width: 125px;
+  .setting-icon {
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
+  .profile {
+    margin: -2rem -3.5rem;
+  }
+
+  .student-table th {
+    font-size: 11px;
+    width: 100px;
+    height: 3rem;
+  }
+
+  .all h1 {
+    font-size: 2.3rem;
+  }
   #items {
     font-size: 2rem;
+  }
+
+  .student-table td {
+    font-size: 13px;
+    width: 10px;
+    height: 2rem;
+  }
+
+  #data {
+    font-size: 16px;
   }
 
   #studentForm label {
@@ -750,7 +809,46 @@
   /* View teachers */
 
   .teacher-table th {
+    font-size: 11px;
+    width: 100px;
+    height: 3rem;
+  }
+
+  .teacher-table td {
+    font-size: 13px;
+    width: 10px;
+    height: 2rem;
+  }
+
+  #teacherForm label {
+    font-size: 19px;
+  }
+
+  #teacherForm input {
+    width: 12rem;
+  }
+
+  /* Sign in  */
+
+  .form-container1 h1 {
+    font-size: 24px;
+  }
+
+  .form-group1 input {
+    width: 28rem;
+  }
+
+  .form-group1 button {
+    width: 5.5rem;
+    height: 2.8rem;
+    padding: 15px;
+    margin-top: 1rem;
+    align-items: center;
+    text-align: center;
     font-size: 16px;
-    width: 125px;
+  }
+
+  #login-error {
+    text-align: center;
   }
 }
