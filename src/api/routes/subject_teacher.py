@@ -59,7 +59,7 @@ def update_subject_teacher(id):
         return response_with(resp.INVALID_INPUT_422, message=str(e))
 
 
-@subject_teacher_r.route("/<id>", methods=["DELETE"], strict_slashes=False)
+@subject_teacher_r.route("<id>", methods=["DELETE"], strict_slashes=False)
 def delete_class_sub(id):
     try:
         subject_teacher = SubjectTeacher.query.get(id)

@@ -58,5 +58,5 @@ class ClassName(db.Model):
     def get_class_id(cls, class_name):
 
         get_class = cls.query.filter_by(class_name=class_name).first()
-
+        print(get_class)
         return get_class.id

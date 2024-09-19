@@ -56,7 +56,7 @@ class Student(db.Model):
         """
         Initializes a new student instance
         """
-
+        print("Before class_id init")
         self.id = str(uuid4())
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
@@ -64,7 +64,11 @@ class Student(db.Model):
         self.last_name = last_name
         self.email = email
         self.username = username
+        print("Before class_id")
+        self.class_id = class_id
+        print("After class_id")
         self.password = self.generate_hash(password)
+        print("GEnerate hash")
         self.confirm_password = self.generate_hash(confirm_password)
 
         # Optional fields

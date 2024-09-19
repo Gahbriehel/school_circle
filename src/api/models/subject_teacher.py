@@ -16,19 +16,15 @@ class SubjectTeacher(db.Model):
     __tablename__ = "subject_teacher"
 
     # Column definitions
-    id = db.Column(db.String(60), nullable=False, unique=True)
+    id = db.Column(db.String(60), nullable=False, unique=True, primary_key=True)
 
     # Timestamp
     created_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, nullable=False, server_default=db.func.now())
 
     # Composite keys
-    teacher_id = db.Column(
-        db.String(60), db.ForeignKey("teachers.id"), nullable=False, primary_key=True
-    )
-    subject_id = db.Column(
-        db.String(60), db.ForeignKey("subjects.id"), nullable=False, primary_key=True
-    )
+    teacher_id = db.Column(db.String(60), db.ForeignKey("teachers.id"), nullable=False)
+    subject_id = db.Column(db.String(60), db.ForeignKey("subjects.id"), nullable=False)
 
     # Relationships
     teacher = db.relationship("Teacher", back_populates="subjects")

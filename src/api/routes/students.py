@@ -81,6 +81,7 @@ def create_student():
         if data.get("class_id"):
             from api.models.classes import ClassName
 
+            print(data["class_id"])
             class_name_id = ClassName.get_class_id(data["class_id"])
             print("In the class_id mod")
             data["class_id"] = class_name_id

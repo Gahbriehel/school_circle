@@ -1,7 +1,9 @@
 GET http://127.0.0.1:5000/api/students
 
+### GET classes
+GET http://127.0.0.1:5000/api/classes
 
-### POST 
+### POST
 
 POST http://127.0.0.1:5000/api/students
 Content-Type: application/json
@@ -12,7 +14,38 @@ Content-Type: application/json
     "email": "newemail@yahoo.com",
     "username": "Dapsonco92",
     "password": "Dapsonco982",
-    "confirm_password": "Dapsonco982"
+    "confirm_password": "Dapsonco982",
+    "class_id": "Jss 1"
+}
+
+### POST 
+
+POST http://127.0.0.1:5000/api/students
+Content-Type: application/json
+
+{
+    "first_name": "Dap",
+    "last_name": "Suy",
+    "email": "neweil@yahoo.com",
+    "username": "Dapsco92",
+    "password": "Donco982",
+    "confirm_password": "Donco982",
+    "class_id": "Jss 1"
+}
+
+### POST 
+
+POST http://127.0.0.1:5000/api/students
+Content-Type: application/json
+
+{
+    "first_name": "Dapson",
+    "last_name": "Suyutar",
+    "email": "Manuel122@yahoo.com",
+    "username": "Polystar",
+    "password": "Drasco109",
+    "confirm_password": "Drasco109",
+    "class_id": "Jss 1"
 }
 
 ### GET subject teacher
@@ -20,7 +53,7 @@ GET http://127.0.0.1:5000/api/subject_teachers
 
 
 ### DELETE Test
-DELETE http://127.0.0.1:5000/api/subject_teachers/0d703ecd-77e0-4d6f-8102-920ef16bb7bd
+DELETE http://127.0.0.1:5000/api/subject_teachers/294d22ad-b1e6-4f3f-9710-bb864a9c52fb/98754564-2a07-47f4-8362-7a004dab5c29
 
 
 ### GET Classes
@@ -43,7 +76,7 @@ Content-Type: application/json
 
 
 {
-    "class_name": "Jss 1"
+    "class_name": "SSS 3"
 }
 
 ### POST Class
@@ -180,12 +213,13 @@ Content-Type: application/json
 
 
 ### PUT Teacher th_ f9af9976-d524-4dcc-9822-64814ab2c82a
-PUT http://127.0.0.1:5000/api/teachers/f9af9976-d524-4dcc-9822-64814ab2c82a
+PUT http://127.0.0.1:5000/api/teachers/339de8b5-9778-4bae-9ef1-7cd939680643
 Content-Type: application/json
 
 {
-    "class_id": "79b615ad-3305-4fd2-bdc8-7a61986b9ce0"
+    "class_id": "0462182c-1f6c-4537-9222-b9b6498392b6"
 }
+
 
 ###
 POST http://127.0.0.1:5000/api/teachers/login
