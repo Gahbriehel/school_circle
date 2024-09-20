@@ -54,14 +54,3 @@ class Admin(db.Model):
         Finds a student by their email
         """
         return cls.query.filter_by(email=email).first()
-
-
-    @staticmethod
-    def generate_hash(password):
-        """Hash the given password using pbkdf2_sha256"""
-        return sha256.hash(password)
-
-    @staticmethod
-    def verify_hash(password, hash):
-        """Verify the given password against the stored hash"""
-        return sha256.verify(password, hash)
