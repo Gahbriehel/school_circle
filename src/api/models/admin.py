@@ -34,7 +34,7 @@ class Admin(db.Model):
         self.last_name = last_name
         self.username = username
         self.email = email
-        self.password = self.generate_hash(password)
+        self.password = password
 
     def create(self):
         """Add the new admin to the session and commit"""
