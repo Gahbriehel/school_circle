@@ -363,7 +363,10 @@ Content-Type: application/json
 }
 
 ### GET Teacher's student
-GET http://127.0.0.1:5000/api/teachers/7f13232c-7f83-4ddb-9f4d-6784a50e2448/students
+GET http://127.0.0.1:5000/api/teachers/0696771b-0f99-4d17-8ee4-599c6a00cde5/students
 
 ### 
-GET http://127.0.0.1:5000/api/teachers/7f13232c-7f83-4ddb-9f4d-6784a50e2448
+GET http://127.0.0.1:5000/api/teachers/0696771b-0f99-4d17-8ee4-599c6a00cde5
+
+### Get teacher 
+GET http://127.0.0.1:5000/api/teachers/

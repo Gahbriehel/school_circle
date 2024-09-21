@@ -34,7 +34,7 @@ class Admin(db.Model):
         self.last_name = last_name
         self.username = username
         self.email = email
-        self.password = password
+        self.password = self.generate_hash(password)
 
     def create(self):
         """Add the new admin to the session and commit"""
@@ -54,3 +54,20 @@ class Admin(db.Model):
         Finds a student by their email
         """
         return cls.query.filter_by(email=email).first()
+
+
+    # Gabe add
+
+    @staticmethod
+    def generate_hash(password):
+        """
+        Generates a hashed password
+        """
+        return sha256.hash(password)
+
+    @staticmethod
+    def verify_hash(password, hash):
+        """
+        Verifies if the provided password matches the hashed password
+        """
+        return sha256.verify(password, hash)

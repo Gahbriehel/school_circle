@@ -117,6 +117,6 @@ class Teacher(db.Model):
     @staticmethod
     def verify_hash(password, hash):
         """
-        Verifies if the provided passsword matches the hashed password
+        Verifies if the provided password matches the hashed password
         """
         return sha256.verify(password, hash)
