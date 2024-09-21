@@ -26,9 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           throw new Error("Server Error");
         }
-      }) 
+      })
       .then((userData) => {
         localStorage.setItem("teacherName", userData.Teacher.first_name);
+        localStorage.setItem("retrievedTeacherId", userData.Teacher.id);
+        console.log(userData.Teacher.id);
+
         window.location.href = "./teacher-dashboard.html";
       })
       .catch((error) => {

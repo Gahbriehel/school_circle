@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const teacherName = localStorage.getItem("teacherName");
   const teacherClass = document.getElementById("class");
   const teacherProfileClass = localStorage.getItem("profileClass");
-  const teacherId = localStorage.getItem("teacherId");
 
   if (teacherName) {
     welcomeText.innerHTML = `${teacherName.toUpperCase()}`;
     teacherClass.innerHTML = `CLASS: ${teacherProfileClass}`;
   }
 });
-
+const teacherId = localStorage.getItem("retrievedTeacherId");
 const itemForm = document.getElementById("itemsForm");
 
 const url = `http://localhost:5000/api/teachers/${teacherId}/students`;
+console.log("Fetching data from URL:", url);
 
 // Get request
 fetch(url)
@@ -22,9 +22,8 @@ fetch(url)
     console.log(data);
     console.log(data.students);
     if (data.students) {
-      let student = ""; // Initialize the table rows string
+      let student = "";
       data.students.forEach((students) => {
-        // Create table row for each student
         student += `<tr class="trow">`;
         student += `<td class="table-row">${students.first_name}</td>`;
         student += `<td class="table-row">${students.last_name}</td>`;
@@ -40,7 +39,6 @@ fetch(url)
         student += `<td class="table-row">${students.street}, ${students.city}, ${students.country}</td>`;
         student += "</tr>";
       });
-      // Insert the generated rows into the table body
       document.getElementById("data").innerHTML = student;
       console.log("Data inserted into table.");
     } else {

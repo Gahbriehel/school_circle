@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const teacherName = localStorage.getItem("teacherName");
   const teacherClass = document.getElementById("class");
   const teacherProfileClass = localStorage.getItem("profileClass");
-  const teacherId = localStorage.getItem("teacherId");
+  const teacherId = localStorage.getItem("retrievedTeacherId");
 
   if (welcomeText) {
     if (teacherName) {

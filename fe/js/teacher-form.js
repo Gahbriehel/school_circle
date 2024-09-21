@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let data = await response.json();
           console.log("sent teacher id: ", data.teacher.id);
           let teacherId = data.teacher.id;
-          localStorage.setItem("teacherId", teacherId);
+          localStorage.setItem("retrievedTeacherId", teacherId);
           window.location.href = "./teacher-dashboard.html";
         } else {
           alert("Oops! There was a problem submitting the form");
