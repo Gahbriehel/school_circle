@@ -1012,8 +1012,8 @@
 
   #tour-btn,
   #get-started-btn {
-    width: 6rem;
-    height: 1.8rem;
+    width: 7rem;
+    height: 2.5rem;
     font-size: 15px;
   }
 
@@ -1279,12 +1279,14 @@
     width: 150px;
     height: 41px;
     font-size: 16px;
+    text-align: center;
   }
 
   #continue-btnn {
     width: 105px;
     height: 41px;
     font-size: 16px;
+    text-align: center;
   }
 
   /* Contact Us Page */
