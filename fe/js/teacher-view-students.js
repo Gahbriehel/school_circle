@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const teacherId = localStorage.getItem("retrievedTeacherId");
 const itemForm = document.getElementById("itemsForm");
 
-const url = `http://localhost:5000/api/teachers/${teacherId}/students`;
+const url = `https://schoolcircle.gahbriehel.tech/api/teachers/${teacherId}/students`;
 console.log("Fetching data from URL:", url);
 
 // Get request

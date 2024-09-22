@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Convert form data to JSON object
     const data = Object.fromEntries(formData.entries());
 
-    fetch("http://localhost:5000/api/teachers", {
+    fetch("https://schoolcircle.gahbriehel.tech/api/teachers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

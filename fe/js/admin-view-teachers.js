@@ -1,7 +1,7 @@
 const teachers = document.querySelector("#data");
 const editTeacher = document.querySelector("#data");
 const addTeacher = document.querySelector("#teacherForm");
-const url = "http://localhost:5000/api/teachers";
+const url = "https://schoolcircle.gahbriehel.tech/api/teachers";
 const editingForm = document.getElementById("itemsForm");
 
 document.addEventListener("DOMContentLoaded", function () {

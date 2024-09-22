@@ -1,7 +1,7 @@
 const students = document.querySelector("#data");
 const editStudent = document.querySelector("#data");
 const addStudent = document.querySelector("#studentForm");
-const url = "http://localhost:5000/api/students";
+const url = "https://schoolcircle.gahbriehel.tech/api/students";
 
 document.addEventListener("DOMContentLoaded", function () {
   const welcomeText = document.getElementById("welcome");

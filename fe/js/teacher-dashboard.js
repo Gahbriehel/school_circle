@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const teacherUrl = "http://127.0.0.1:5000/api/teachers";
+const teacherUrl = "https://schoolcircle.gahbriehel.tech/api/teachers";
 fetch(teacherUrl)
   .then((response) => response.json())
   .then((data) => {

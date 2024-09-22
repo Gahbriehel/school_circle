@@ -11,7 +11,7 @@
 //   });
   
   const itemForm = document.getElementById("itemsForm");
-  const url = "http://localhost:5000/api/students";
+  const url = "https://schoolcircle.gahbriehel.tech/api/students";
   
   // Get request
   fetch(url)

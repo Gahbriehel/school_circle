@@ -1,4 +1,4 @@
-const loginApiUrl = "http://localhost:5000/api/teachers/login";
+const loginApiUrl = "https://schoolcircle.gahbriehel.tech/api/teachers/login";
 
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("teacher-login-form");
